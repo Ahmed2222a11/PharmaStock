@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="div-phone">
+  <h1>PharmaStock</h1>
+  <div class="d-flex justify-content-between div-btn-home">
+    <%= link_to "C'est pour vous ?", "#", class: "btn-home-pharmacies" do %>
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="">
+    <% end %>
+    <%= link_to "Ou pour votre annimal ?", "#", class: "btn-home-veterinaires" %>
+  </div>
+</div>
