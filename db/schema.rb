@@ -10,9 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_141552) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_153432) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "booking_medicaments", force: :cascade do |t|
+    t.integer "quantite"
+    t.bigint "booking_id", null: false
+    t.bigint "medicament_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_booking_medicaments_on_booking_id"
+    t.index ["medicament_id"], name: "index_booking_medicaments_on_medicament_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "pharmacie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pharmacie_id"], name: "index_bookings_on_pharmacie_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "medicaments", force: :cascade do |t|
+    t.string "nom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pharmacies", force: :cascade do |t|
+    t.string "adresse"
+    t.string "nom"
+    t.string "email"
+    t.integer "telephone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer "quantite"
+    t.bigint "medicament_id", null: false
+    t.bigint "pharmacie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medicament_id"], name: "index_stocks_on_medicament_id"
+    t.index ["pharmacie_id"], name: "index_stocks_on_pharmacie_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +66,17 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_141552) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nom"
+    t.string "adresse"
+    t.integer "telephone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "booking_medicaments", "bookings"
+  add_foreign_key "booking_medicaments", "medicaments"
+  add_foreign_key "bookings", "pharmacies", column: "pharmacie_id"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "stocks", "medicaments"
+  add_foreign_key "stocks", "pharmacies", column: "pharmacie_id"
 end
