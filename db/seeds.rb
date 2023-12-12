@@ -14,11 +14,17 @@
 # puts 'destroying trees'
 # User.destroy_all
 # puts 'destroying users'
+
+Stock.destroy_all
+Pharmacie.destroy_all
+Medicament.destroy_all
+puts "destroying all"
+
 puts "creation pharmacies"
-pharma_1 = Pharmacie.create!(nom: "Pharmacie de la gare", adresse: "1 rue de la gare", telephone: "01 02 03 04 05", email: "lol@gmail.com")
-pharma_2 = Pharmacie.create!(nom: "Pharmacie de mer", adresse: "2 rue de la gare", telephone: "01 02 03 04 06", email: "lol2@gmail.com")
-pharma_3 = Pharmacie.create!(nom: "Pharmacie de la montagne", adresse: "3 rue de la gare", telephone: "01 02 03 04 07", email: "lol3@gmail.com")
-pharma_4 = Pharmacie.create!(nom: "Pharmacie de la plage", adresse: "4 rue de la gare", telephone: "01 02 03 04 08", email: "lol4@gmail.com")
+pharma_1 = Pharmacie.create!(nom: "Pharmacie de la gare", adresse: "1 rue de la gare", telephone: 01_02_03_04_05, email: "lol@gmail.com")
+pharma_2 = Pharmacie.create!(nom: "Pharmacie de mer", adresse: "2 rue de la gare", telephone: 01_02_03_04_07, email: "lol2@gmail.com")
+pharma_3 = Pharmacie.create!(nom: "Pharmacie de la montagne", adresse: "3 rue de la gare", telephone: 01_02_03_04_0, email: "lol3@gmail.com")
+pharma_4 = Pharmacie.create!(nom: "Pharmacie de la plage", adresse: "4 rue de la gare", telephone: 01_02_03_04_05, email: "lol4@gmail.com")
 puts "pharmacies created"
 puts "creation medicaments"
 medicament_1 = Medicament.create!(nom: "Doliprane")

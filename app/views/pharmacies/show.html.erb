@@ -1,0 +1,12 @@
+<h1>bien show</h1>
+
+<div class="row">
+      <p><%= @pharmacie.nom %> </p>
+      <p><%= @pharmacie.adresse %> </p>
+      <p><%= @pharmacie.telephone.to_i %> </p>
+      <p><%= @pharmacie.email %> </p>
+
+      <% @pharmacie.medicaments.each do |medoc| %>
+      <p><%= medoc.nom %></p>
+      <% end %>
+      </div>
