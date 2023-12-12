@@ -1,4 +1,5 @@
 class PharmaciesController < ApplicationController
+
 before_action :set_pharmacie, only: [:show]
   def index
 
@@ -7,11 +8,14 @@ before_action :set_pharmacie, only: [:show]
     # end
     if !params[:nom_de_medicament].nil? && !params[:quantite].nil?
     @pharmacies = Pharmacie.joins(stocks: :medicament).where("medicaments.nom ILIKE ? AND stocks.quantite >= ?", "%#{params[:nom_de_medicament]}%", params[:quantite].to_i )
-    end
+      @medicament = params[:nom_de_medicament]
+      @quantite = params[:quantite]
+  end
   end
 
   def show
-
+    @medicament = params[:medicament_id]
+    @quantite = params[:quantite]
   end
 
 private

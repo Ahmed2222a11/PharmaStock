@@ -1,0 +1,9 @@
+
+
+<%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
+   <%= t.label :medicament %>
+  <%= t.text_field :medicament, value: @bookmed.medicament.nom %>
+    <%= t.label :quantite %>
+  <%= t.text_field :quantite %>
+  <%= t.submit %>
+<% end %>
