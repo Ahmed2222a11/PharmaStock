@@ -1,6 +1,19 @@
+
 <div class="div-phone">
   <div class="div-title-phone">
   <h1>PharmaStock</h1>
   </div>
-"Votre code ici"
+<h1>bien show</h1>
+
+<div class="row">
+      <p><%= @pharmacie.nom %> </p>
+      <p><%= @pharmacie.adresse %> </p>
+      <p><%= @pharmacie.telephone.to_i %> </p>
+      <p><%= @pharmacie.email %> </p>
+
+      <% @pharmacie.medicaments.each do |medoc| %>
+      <p><%= medoc.nom %></p>
+      <% end %>
+      </div>
 </div>
+

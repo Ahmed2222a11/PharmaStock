@@ -7,3 +7,35 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Medicament.destroy_all
+# puts 'destroying medicaments'
+# Stock.destroy_all
+# puts 'destroying trees'
+# User.destroy_all
+# puts 'destroying users'
+
+Stock.destroy_all
+Pharmacie.destroy_all
+Medicament.destroy_all
+puts "destroying all"
+
+puts "creation pharmacies"
+pharma_1 = Pharmacie.create!(nom: "Pharmacie de la gare", adresse: "1 rue de la gare", telephone: 01_02_03_04_05, email: "lol@gmail.com")
+pharma_2 = Pharmacie.create!(nom: "Pharmacie de mer", adresse: "2 rue de la gare", telephone: 01_02_03_04_07, email: "lol2@gmail.com")
+pharma_3 = Pharmacie.create!(nom: "Pharmacie de la montagne", adresse: "3 rue de la gare", telephone: 01_02_03_04_0, email: "lol3@gmail.com")
+pharma_4 = Pharmacie.create!(nom: "Pharmacie de la plage", adresse: "4 rue de la gare", telephone: 01_02_03_04_05, email: "lol4@gmail.com")
+puts "pharmacies created"
+puts "creation medicaments"
+medicament_1 = Medicament.create!(nom: "Doliprane")
+medicament_2 = Medicament.create!(nom: "Aspirine")
+medicament_3 = Medicament.create!(nom: "Ibuprofene")
+medicament_4 = Medicament.create!(nom: "Paracetamol")
+puts "medicaments created"
+
+puts "creation stocks"
+stock_1 = Stock.create!(quantite: 10, pharmacie_id: pharma_1.id, medicament_id: medicament_1.id)
+stock_2 = Stock.create!(quantite: 5, pharmacie_id: pharma_2.id, medicament_id: medicament_2.id)
+stock_3 = Stock.create!(quantite: 7, pharmacie_id: pharma_3.id, medicament_id: medicament_3.id)
+stock_4 = Stock.create!(quantite: 6, pharmacie_id: pharma_4.id, medicament_id: medicament_4.id)
+puts "stocks created"
