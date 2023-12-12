@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="div-phone">
+  <div class="div-title-phone">
+  <h1>PharmaStock</h1>
+  </div>
+  <div class="d-flex justify-content-between div-btn-home">
+    <%= link_to pharmacies_path, class: "btn-home-pharmacies" do %>
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="">
+      <p>C'est pour vous ?</p>
+    <% end %>
+    <%= link_to pharmacies_path, class: "btn-home-veterinaires" do %>
+      <img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/75552.ngsversion.1422285553360.jpg?w=1600&h=900" alt="">
+      <p>Ou votre annimal ?</p>
+    <% end %>
+  </div>
+</div>
