@@ -1,4 +1,5 @@
 class PharmaciesController < ApplicationController
+
 before_action :set_pharmacie, only: [:show]
   def index
 
