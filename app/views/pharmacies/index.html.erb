@@ -12,7 +12,7 @@
  <div class="row">
  <%if @pharmacies %>
       <% @pharmacies.each do |pharmacie| %>
-      <p>La <%= link_to pharmacie.nom , pharmacy_path(pharmacie)%> a comme médicament: </p>
+      <p>La <%= link_to pharmacie.nom , pharmacy_path(pharmacie, quantite: @quantite, medicament_id: @medicament )%> a comme médicament: </p>
       <% pharmacie.medicaments.each do |medoc| %>
       <p><%= medoc.nom %></p>
       <% end %>
