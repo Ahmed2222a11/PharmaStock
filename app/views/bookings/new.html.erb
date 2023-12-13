@@ -1,6 +1,7 @@
 
 
 <%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
+  <%= t.hidden_field :pharmacie_id, value: @pharmacie.id %>
    <%= t.label :medicament %>
   <%= t.text_field :medicament, value: @bookmed.medicament.nom %>
     <%= t.label :quantite %>

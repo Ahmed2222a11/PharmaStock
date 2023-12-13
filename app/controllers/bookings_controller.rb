@@ -4,7 +4,8 @@ class BookingsController < ApplicationController
 def new
   @booking = Booking.new
   @booking.user = current_user
-  @booking.pharmacie = Pharmacie.find(params[:pharmacie_id])
+  @pharmacie = Pharmacie.find(params[:pharmacie_id])
+  @booking.pharmacie = @pharmacie
   if @booking.save
     @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:medicament]), quantite: params[:quantite].to_i)
     @bookmed.save
@@ -15,9 +16,10 @@ end
   def create
     @booking = Booking.new
     @booking.user = current_user
-    @booking.pharmacie = Pharmacie.find(params[:pharmacie_id])
+    @booking.pharmacie = Pharmacie.find(params[:booking_medicament][:pharmacie_id]
+    )
     if @booking.save
-      @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find(params[:medicament_id]), quantite: params[:quantite].to_i)
+      @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:booking_medicament][:medicament]), quantite: params[:booking_medicament][:quantite].to_i)
       if @bookmed.save
       redirect_to booking_path(@booking)
       end
