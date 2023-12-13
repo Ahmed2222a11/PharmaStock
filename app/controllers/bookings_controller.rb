@@ -1,22 +1,18 @@
 class BookingsController < ApplicationController
 
 
-def index
-  @bookings = Booking.where(user: current_user)
-end
-
-def new
-    @quantite = params[:quantite]
-    @booking = Booking.new
-    @booking.user = current_user
-    @pharmacie = Pharmacie.find(params[:pharmacie_id])
-    @booking.pharmacie = @pharmacie
-    if @booking.save
-      @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:medicament]), quantite: params[:quantite].to_i)
-      @bookmed.save
-    end
+  def index
+    @bookings = Booking.where(user: current_user)
   end
 
+  def new
+      @quantite = params[:quantite]
+      @booking = Booking.new
+      @booking.user = current_user
+      @pharmacie = Pharmacie.find(params[:pharmacie_id])
+      @booking.pharmacie = @pharmacie
+      @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:medicament]), quantite: params[:quantite].to_i)
+  end
 
   def create
     @booking = Booking.new
@@ -49,8 +45,5 @@ def new
       flash[:alert] = "La suppression de la réservation a échoué."
       redirect_to booking_path(@booking)
     end
-  end
-
-
   end
 end
