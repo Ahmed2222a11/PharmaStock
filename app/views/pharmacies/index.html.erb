@@ -2,7 +2,6 @@
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
   </div>
-
   <div class="big-box-index-pharmacies" data-controller="search medicament">
     <div class="row">
       <div class="col-sm-8 my-3">
@@ -14,28 +13,24 @@
             <div class="d-flex justify-content-center form-search-bar">
               <%= label_tag "nom_de_medicament", "" %>
               <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament], class: "form-control input-medicaments-search-bar", placeholder: "Nom du médicament" %>
-              <%= number_field_tag "quantite", @params_quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
+              <%= number_field_tag "quantite", @quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
               <%= submit_tag "", class: "btn-search-bar" do %>
                 <i class="fa fa-solid fa-magnifying-glass"></i>
               <% end %>
             </div>
           <% end %>
-
-
-
- <div class="row div-result-search-pharmacies">
- <%if @pharmacies %>
-      <% @pharmacies.each do |pharmacie| %>
-      <p>La <%= link_to pharmacie.nom , pharmacy_path(pharmacie, quantite: @quantite, medicament_id: @medicament )%> a comme médicament: </p>
-      <% pharmacie.medicaments.each do |medoc| %>
-      <p><%= medoc.nom %></p>
-      <% end %>
-      <% end %>
-      <% end %>
-
-   
-
+        </div>
       </div>
+    </div>
+    <div class="row div-result-search-pharmacies">
+      <%if @pharmacies %>
+        <% @pharmacies.each do |pharmacie| %>
+          <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament )%> a comme médicament: </p>
+          <% pharmacie.medicaments.each do |medoc| %>
+            <p><%= medoc.nom %></p>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
