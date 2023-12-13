@@ -1,9 +1,15 @@
-
-
-<%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
-   <%= t.label :medicament %>
-  <%= t.text_field :medicament, value: @bookmed.medicament.nom %>
-    <%= t.label :quantite %>
-  <%= t.text_field :quantite %>
-  <%= t.submit %>
-<% end %>
+<div class="div-phone">
+  <div class="div-title-phone">
+    <h1>PharmaStock</h1>
+  </div>
+  <h4>Votre panier</h4>
+  <%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
+    <%= t.label :medicament, value: @bookmed.medicament.nom %>
+    <div class="d-flex div-plus-moins justify-content-between">
+      <i class="fa-solid fa-minus"></i>
+      <p> <%= @quantite %> </p>
+      <i class="fa-solid fa-plus"></i>
+    </div>
+    <%= t.submit %>
+  <% end %>
+</div>
