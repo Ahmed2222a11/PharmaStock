@@ -35,6 +35,8 @@ end
   def show
     @booking = Booking.find(params[:id])
     @booking_medicaments = BookingMedicament.where(booking: @booking)
+    @qrcode = RQRCode::QRCode.new("Médicament: #{@booking_medicaments.first.medicament.nom}, Quantité: #{@booking_medicaments.first.quantite}")
+
   end
 
   end
