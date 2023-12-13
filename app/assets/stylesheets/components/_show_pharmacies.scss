@@ -6,6 +6,7 @@
   text-align: center;
   background-color: rgb(212, 212, 212);
   border-radius: 50px;
+  border: 1px grey solid;
 }
 
 .div-phone h1 {
@@ -17,7 +18,7 @@
   padding-top: 65px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  border: 1px grey solid;
+  border-bottom: 1px grey solid;
 }
 
 .div-show-pharmacies {
@@ -93,10 +94,15 @@
 
 .div-infos-pharmacies h3 {
   padding: 10px 0;
+  font-size: 26px;
 }
 
 .infos-pharmacies {
   padding: 0 0 0 10px;
+}
+
+.infos-pharmacies p {
+  font-size: 22px;
 }
 
 .infos-pharmacies i {
