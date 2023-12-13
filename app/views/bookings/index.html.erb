@@ -1,0 +1,18 @@
+<h1>Mes reservations!!!!!</h1>
+
+<div class="container">
+  <div class="card">
+    <div class="card-footer">
+      <% @bookings.each do |booking| %>
+        <p>
+          <%= link_to "Réservation ##{booking.id}", booking_path(booking) %><br>
+          <% booking.booking_medicaments.each do |booking_medicament| %>
+            Nom du médicament: <%= booking_medicament.medicament.nom %> - Quantité: <%= booking_medicament.quantite %><br>
+          <% end %>
+          <%= link_to "Cancel reservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cansel-reservation mx-auto" %>
+      <% end %>
+
+      <%= link_to "Home", pharmacies_path %>
+    </div>
+  </div>
+</div>
