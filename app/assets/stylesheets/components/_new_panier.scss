@@ -22,9 +22,36 @@
 }
 
 .input-quantite-panier input {
+  pointer-events: none;
   width: 20px;
   border-radius: 15px;
   padding: 0 0 0 4px;
   margin: 0 5px;
   border: 1px solid rgb(128, 128, 128);
+}
+
+.div-plus-moins h5 {
+  margin: 20px 20px 20px 0;
+  font-size: 17px;
+  padding: 3px 3px 0 0;
+}
+
+.div-plus-moins p {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.div-plus-moins i {
+  border: 2px solid black;
+  border-radius: 50%;
+  line-height: 1.2;
+  font-size: 20px;
+  width: 28px;
+  height: 28px;
+}
+
+.div-medicaments-panier {
+  height: auto;
+  width: 100%;
+  margin-bottom: 25px;
 }

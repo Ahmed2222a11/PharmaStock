@@ -5,26 +5,16 @@
   <h4>Votre panier</h4>
   <%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
     <%= t.hidden_field :pharmacie_id, value: @pharmacie.id %>
-    <%= t.label :medicament %>
-    <%= t.text_field :medicament, value: @bookmed.medicament.nom %>
-    <%= t.label :quantite %>
-      <%= t.text_field :quantite %>
-
+    <div class="d-flex div-medicaments-panier justify-content-center"  data-controller="plus-moins-panier" data-plus-moins-panier-stock-value="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed.medicament.id).quantite %>">
+      <%= t.hidden_field :medicament, value: @bookmed.medicament.nom %>
+      <h5><%= @bookmed.medicament.nom %></h5>
+      <div class="d-flex div-plus-moins">
+        <i class="fa-solid fa-minus" data-action="click->plus-moins-panier#moins"></i>
+        <p class="input-quantite-panier"> <%= t.number_field :quantite %> </p>
+        <i class="fa-solid fa-plus" data-action="click->plus-moins-panier#plus"></i>
+      </div>
+    </div>
     <%= t.submit %>
   <% end %>
 </div>
-
-
-<!--<%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
-    <%= t.hidden_field :pharmacie_id, value: @pharmacie.id %>
-    <div class="d-flex div-plus-moins justify-content-between">
-      <%= t.label :medicament, value: @bookmed.medicament.nom %>
-      <div class="d-flex">
-        <i class="fa-solid fa-minus"></i>
-        <p class="input-quantite-panier"> <%= t.text_field :quantite %> </p>
-        <i class="fa-solid fa-plus"></i>
-        <%= t.submit %>
-      </div>
-    </div>
-  <% end %>
 </div>
