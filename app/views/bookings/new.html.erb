@@ -11,3 +11,18 @@
     <%= t.submit %>
   <% end %>
 </div>
+
+
+<!--<%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
+    <%= t.hidden_field :pharmacie_id, value: @pharmacie.id %>
+    <div class="d-flex div-plus-moins justify-content-between">
+      <%= t.label :medicament, value: @bookmed.medicament.nom %>
+      <div class="d-flex">
+        <i class="fa-solid fa-minus"></i>
+        <p class="input-quantite-panier"> <%= t.text_field :quantite %> </p>
+        <i class="fa-solid fa-plus"></i>
+        <%= t.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
