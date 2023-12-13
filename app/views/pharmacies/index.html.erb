@@ -2,6 +2,7 @@
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
   </div>
+
   <div class="big-box-index-pharmacies" data-controller="search medicament">
     <div class="row">
       <div class="col-sm-8 my-3">
@@ -19,17 +20,21 @@
               <% end %>
             </div>
           <% end %>
-        </div>
-      </div>
-      <div class="row div-result-search-pharmacies">
-        <%if @pharmacies %>
-          <% @pharmacies.each do |pharmacie| %>
-            <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@params_quantite)%> a comme médicament: </p>
-            <% pharmacie.medicaments.each do |medoc| %>
-              <p><%= medoc.nom %></p>
-            <% end %>
-          <% end %>
-        <% end %>
+
+
+
+ <div class="row div-result-search-pharmacies">
+ <%if @pharmacies %>
+      <% @pharmacies.each do |pharmacie| %>
+      <p>La <%= link_to pharmacie.nom , pharmacy_path(pharmacie, quantite: @quantite, medicament_id: @medicament )%> a comme médicament: </p>
+      <% pharmacie.medicaments.each do |medoc| %>
+      <p><%= medoc.nom %></p>
+      <% end %>
+      <% end %>
+      <% end %>
+
+   
+
       </div>
     </div>
   </div>

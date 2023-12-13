@@ -6,15 +6,18 @@ before_action :set_pharmacie, only: [:show]
     # if params[:medicament] != ""
     #   @pharmacies = Pharmacie.where(["medicament= ?", params[:medicament]])
     # end
-    @params_quantite = params[:quantite]
 
-    if !params[:nom_de_medicament].nil? && !@params_quantite.nil?
-    @pharmacies = Pharmacie.joins(stocks: :medicament).where("medicaments.nom ILIKE ? AND stocks.quantite >= ?", "%#{params[:nom_de_medicament]}%", @params_quantite.to_i )
-    end
+    if !params[:nom_de_medicament].nil? && !params[:quantite].nil?
+    @pharmacies = Pharmacie.joins(stocks: :medicament).where("medicaments.nom ILIKE ? AND stocks.quantite >= ?", "%#{params[:nom_de_medicament]}%", params[:quantite].to_i )
+      @medicament = params[:nom_de_medicament]
+      @quantite = params[:quantite]
+  end
   end
 
   def show
-    @params_quantite = params[:quantite]
+    @medicament = params[:medicament_id]
+    @quantite = params[:quantite]
+
   end
 
 private
