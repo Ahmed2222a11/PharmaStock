@@ -6,6 +6,7 @@
   text-align: center;
   background-color: rgb(212, 212, 212);
   border-radius: 50px;
+  border: 1px grey solid;
 }
 
 .div-phone h1 {
@@ -17,7 +18,7 @@
   padding-top: 65px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  border: 1px grey solid;
+  border-bottom: 1px grey solid;
 }
 
 .btn-home-page i{
@@ -29,7 +30,60 @@
   font-weight: 900;
   padding-top: 7px;
   font-size: 30px;
-  position: absolute;
-  top: 140px;
-  left: 4px;
+}
+
+.btn-home-page {
+  padding-left: 10px;
+}
+
+.input-quantite-search-bar {
+  background-color: white;
+  width: 63px;
+  border-left: 0;
+  border-right: 3px solid rgb(128, 128, 128);
+  border-top: 1px solid rgb(128, 128, 128);
+  border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.input-medicaments-search-bar {
+  background-color: white;
+  width: 177px;
+  border-right: 3px solid rgb(128, 128, 128);
+  border-top: 1px solid rgb(128, 128, 128);
+  border-bottom: 1px solid rgb(128, 128, 128);
+  border-left: 1px solid rgb(128, 128, 128);
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.btn-search-bar i {
+  font-size: 30px;
+  color: black;
+}
+
+.btn-search-bar {
+  background-color: white;
+  width: 35px;
+  border-left: 0;
+  border-right: 1px solid rgb(128, 128, 128);
+  border-top: 1px solid rgb(128, 128, 128);
+  border-bottom: 1px solid rgb(128, 128, 128);
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.form-search-bar {
+  padding: 6px 0 0 13px;
+}
+
+.big-box-index-pharmacies {
+  background-image: url("map.jpg");
+  background-size: cover;
+  height: 663px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.div-result-search-pharmacies {
+  background-color: rgb(245, 245, 245);
 }
