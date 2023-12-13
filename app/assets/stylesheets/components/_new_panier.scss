@@ -1,0 +1,30 @@
+.div-phone {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  height: 800px;
+  text-align: center;
+  background-color: white;
+  border-radius: 50px;
+  border: 1px grey solid;
+}
+
+.div-phone h1 {
+  margin-bottom: 35px;
+}
+
+.div-title-phone {
+  background-color: white;
+  padding-top: 65px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom: 1px grey solid;
+}
+
+.input-quantite-panier input {
+  width: 20px;
+  border-radius: 15px;
+  padding: 0 0 0 4px;
+  margin: 0 5px;
+  border: 1px solid rgb(128, 128, 128);
+}
