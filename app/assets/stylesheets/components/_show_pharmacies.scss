@@ -2,15 +2,16 @@
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  height: 800px;
   text-align: center;
   background-color: rgb(212, 212, 212);
-  border-radius: 50px;
-  border: 1px grey solid;
+  // border-radius: 50px;
+  // border: 1px grey solid;
 }
 
 .div-phone h1 {
   margin-bottom: 35px;
+  color: #22B14C;
+  font-weight: bold;
 }
 
 .div-title-phone {
@@ -23,11 +24,7 @@
 
 .div-show-pharmacies {
   background-color: white;
-  width: 100vw;
-  height: 664px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border: 1px grey solid;
+  width: 100%;
 }
 
 .div-img-pharmacies {
@@ -75,15 +72,18 @@
   border-radius: 15px;
   font-weight: bold;
   color: black;
-  position: absolute;
-  top: 407px;
-  right: 22px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin: 25px 20px 4px 0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px, rgba(0, 0, 0, 0.3) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+
+.btn-panier-show-pharmacie:active {
+  background-color: rgb(120, 252, 120);
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .div-infos-pharmacies {
   width: 373px;
-  height: 231px;
+  height: auto;
   background-color: #effbf0;
   border: 2px solid #0da700;
   border-radius: 15px;
@@ -97,6 +97,7 @@
 
 .infos-pharmacies {
   padding: 0 0 0 10px;
+  text-align: left;
 }
 
 .infos-pharmacies p {
@@ -105,4 +106,12 @@
 
 .infos-pharmacies i {
   padding-right: 10px;
+  padding-top: 7px;
+}
+
+.horaires img {
+  width: 30px;
+  height: 30px;
+  padding: 4px 0 0 5px;
+  margin-left: 5px;
 }

@@ -2,41 +2,40 @@
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
   </div>
-  <div class="big-box-index-pharmacies" data-controller="search medicament">
-    <div class="row">
-      <div class="col-sm-8 my-3">
-        <div class="d-flex div-form-index">
-
-          <%= link_to root_path, class: "btn-home-page" do %>
-            <i class="fa-solid fa-house"></i>
-          <% end %>
-          <%= form_tag(pharmacies_path, method: :get) do %>
-            <div class="d-flex justify-content-center form-search-bar">
-              <%= label_tag "nom_de_medicament", "" %>
-              <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament], class: "form-control input-medicaments-search-bar", placeholder: "Nom du médicament" %>
-              <%= number_field_tag "quantite", @quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
-              <%= submit_tag "", class: "btn-search-bar" do %>
-                <i class="fa fa-solid fa-magnifying-glass"></i>
-              <% end %>
-            </div>
-          <% end %>
+  <div data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="map">
+    <div class="big-box-index-pharmacies items-index" data-controller="search medicament">
+      <div class="row">
+        <div class="col-sm-8 my-3">
+          <div class="d-flex div-form-index">
+            <%= link_to root_path, class: "btn-home-page" do %>
+              <i class="fa-solid fa-house"></i>
+            <% end %>
+            <%= form_tag(pharmacies_path, method: :get) do %>
+              <div class="d-flex justify-content-center form-search-bar">
+                <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament], class: "form-control input-medicaments-search-bar", placeholder: "Nom du médicament" %>
+                <%= number_field_tag "quantite", @quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
+                <button type="submit" class="btn-search-bar">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row div-result-search-pharmacies">
-      <%if @pharmacies %>
-        <% @pharmacies.each do |pharmacie| %>
-          <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament )%> a comme médicament: </p>
-          <% pharmacie.medicaments.each do |medoc| %>
-            <p><%= medoc.nom %></p>
+      <div class="row div-result-search-pharmacies mx-auto">
+        <%if @pharmacies %>
+          <% @pharmacies.each do |pharmacie| %>
+            <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament )%> a comme médicament: </p>
+            <% pharmacie.medicaments.each do |medoc| %>
+              <p><%= medoc.nom %></p>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-      <%= link_to "Mes reservations", bookings_path %>
+      </div>
     </div>
+      <div class="div-btn-mes-reservations items-index">
+        <%= link_to "", bookings_path, class:"btn-mes-reservations" %>
+      </div>
   </div>
 </div>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
