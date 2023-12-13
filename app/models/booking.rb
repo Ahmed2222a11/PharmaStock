@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :pharmacie
-  has_many :booking_medicaments
+  has_many :booking_medicaments, dependent: :destroy
 
 end

@@ -1,17 +1,16 @@
 class BookingsController < ApplicationController
 
-
+def index
+  @bookings = Booking.where(user: current_user)
+end
 
 def new
   @booking = Booking.new
   @booking.user = current_user
   @pharmacie = Pharmacie.find(params[:pharmacie_id])
   @booking.pharmacie = @pharmacie
-  if @booking.save
-    @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:medicament]), quantite: params[:quantite].to_i)
-    @bookmed.save
+  @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:medicament]), quantite: params[:quantite].to_i)
 
-  end
 end
 
   def create
@@ -37,6 +36,19 @@ end
     @booking_medicaments = BookingMedicament.where(booking: @booking)
     @qrcode = RQRCode::QRCode.new("Médicament: #{@booking_medicaments.first.medicament.nom}, Quantité: #{@booking_medicaments.first.quantite}")
 
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])  # Ajoutez cette ligne pour récupérer le bon Booking
+    @pharmacie = @booking.pharmacie
+
+    if @booking.destroy
+      redirect_to bookings_path, status: :see_other
+    else
+      # Gérer le cas où la suppression échoue
+      flash[:alert] = "La suppression de la réservation a échoué."
+      redirect_to booking_path(@booking)
+    end
   end
 
   end
