@@ -38,38 +38,36 @@
 }
 
 .div-img-medicaments {
-  width: 68px;
-  height: 30px;
-  background-image: url("https://as1.ftcdn.net/v2/jpg/00/38/81/24/1000_F_38812406_xTY0OZ9EB342IU3xEzeSxgpjtzL5zHWn.jpg");
+  width: 30px;
+  height: 70px;
+  background-image: url("pillule2.jpg");
   background-size: contain;
-  transform: rotate(90deg);
-  margin-top: 34px;
+  margin: 19px 8px 0 20px;
+}
+
+.div-quantite-show-pharma h5 {
+  font-size: 17px;
+  padding: 3px 5px 0 0;
+}
+
+.div-quantite-show-pharma p {
+  font-size: 19px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .div-medicaments {
   height: auto;
   width: 100%;
+  margin-bottom: 25px;
 }
 
 .div-medicaments h3 {
   padding-top: 20px;
+  margin: 10px 0 0 0;
 }
 
-.div-plus-moins p {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.div-plus-moins i {
-  border: 2px solid black;
-  border-radius: 50%;
-  line-height: 1.2;
-  font-size: 20px;
-  width: 28px;
-  height: 28px;
-}
-
-.btn-reserver-show-pharmacie {
+.btn-panier-show-pharmacie {
   text-decoration: none;
   padding: 15px 20px;
   background-color: lightgreen;

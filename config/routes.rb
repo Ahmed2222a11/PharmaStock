@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :pharmacies, only: [:index, :show] do
     resources :bookings, only: [:edit, :update]
   end
-  resources :bookings, only: [:create, :edit, :update, :show, :destroy, :new]
+  resources :bookings, only: [:create, :edit, :update, :show, :destroy, :new, :index]
 
   # Defines the root path route ("/")
   # root "posts#index"

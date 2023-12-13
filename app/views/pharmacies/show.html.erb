@@ -1,6 +1,3 @@
-
-
-
 <div class="div-phone">
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
@@ -13,20 +10,19 @@
         <div class="div-img-medicaments">
         </div>
         <div class="justify-content-between">
-          <div class="d-flex flex-column">
+          <div class="d-flex flex-column div-nom-medoc">
             <h3><% @pharmacie.medicaments.each do |medoc| %>
-                <p><%= medoc.nom %></p>
+                <%= medoc.nom %>
               <% end %></h3>
-            <div class="d-flex div-plus-moins justify-content-between">
-              <i class="fa-solid fa-minus"></i>
+            <div class="d-flex div-quantite-show-pharma justify-content-start">
+              <h5>Quantité :</h5>
               <p> <%= @quantite %> </p>
-              <i class="fa-solid fa-plus"></i>
             </div>
           </div>
         </div>
       </div>
       <div>
-        <%= link_to "Réserver", root_path, class: "btn-reserver-show-pharmacie" %>
+        <%= link_to "Panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament), class: "btn-panier-show-pharmacie" %>
       </div>
     </div>
     <div class="div-infos-pharmacies d-flex flex-column">
@@ -34,7 +30,7 @@
       <div class="infos-pharmacies">
         <div class="d-flex">
           <i class="fa-solid fa-phone"></i>
-          <p><%= @pharmacie.telephone.to_i %> </p>
+          <p><%= @pharmacie.telephone %> </p>
         </div>
         <div class="d-flex">
           <i class="fa-solid fa-house"></i>
@@ -48,4 +44,3 @@
     </div>
   </div>
 </div>
-<%= link_to "Panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament) %>
