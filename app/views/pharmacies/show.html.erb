@@ -12,9 +12,9 @@
         <div class="justify-content-between">
           <div class="d-flex flex-column div-nom-medoc">
             <h3><% @pharmacie.medicaments.each do |medoc| %>
-                <p><%= medoc.nom %></p>
+                <%= medoc.nom %>
               <% end %></h3>
-            <div class="d-flex div-plus-moins justify-content-center">
+            <div class="d-flex div-quantite-show-pharma justify-content-start">
               <h5>Quantité :</h5>
               <p> <%= @quantite %> </p>
             </div>
