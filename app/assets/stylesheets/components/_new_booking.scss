@@ -2,15 +2,16 @@
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  height: 800px;
   text-align: center;
-  background-color: white;
-  border-radius: 50px;
-  border: 1px grey solid;
+  background-color: rgb(212, 212, 212);
+  // border-radius: 50px;
+  // border: 1px grey solid;
 }
 
 .div-phone h1 {
   margin-bottom: 35px;
+  color: #22B14C;
+  font-weight: bold;
 }
 
 .div-title-phone {
@@ -19,6 +20,11 @@
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   border-bottom: 1px grey solid;
+}
+
+.div-show-panier {
+  background-color: white;
+  width: 100%;
 }
 
 .input-quantite-panier input {
@@ -54,4 +60,8 @@
   height: auto;
   width: 100%;
   margin-bottom: 25px;
+}
+
+.div-medicaments-panier h5 {
+  margin: 0 200px 0 0;
 }

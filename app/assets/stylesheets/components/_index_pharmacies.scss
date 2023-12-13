@@ -2,15 +2,16 @@
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  height: 800px;
   text-align: center;
   background-color: rgb(212, 212, 212);
-  border-radius: 50px;
-  border: 1px grey solid;
+  // border-radius: 50px;
+  // border: 1px grey solid;
 }
 
 .div-phone h1 {
   margin-bottom: 35px;
+  color: #22B14C;
+  font-weight: bold;
 }
 
 .div-title-phone {
@@ -21,8 +22,9 @@
   border-bottom: 1px grey solid;
 }
 
-.btn-home-page i{
+.btn-home-page i {
   background-color: white;
+  color: #22B14C;
   border: 1px grey solid;
   border-radius: 50%;
   width: 50px;
@@ -36,7 +38,29 @@
   padding-left: 10px;
 }
 
+.div-btn-mes-reservations:active,
+.btn-home-page i:active,
+.input-quantite-search-bar:focus,
+.input-medicaments-search-bar:focus {
+  outline: none;
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.div-btn-mes-reservations,
+.input-quantite-search-bar,
+.input-medicaments-search-bar,
+.btn-search-bar,
+.btn-home-page i {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px, rgba(0, 0, 0, 0.3) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+
+.input-quantite-search-bar:focus,
+.input-medicaments-search-bar:focus {
+  background-color: white;
+}
+
 .input-quantite-search-bar {
+  text-align: center;
   background-color: white;
   width: 63px;
   border-left: 0;
@@ -46,6 +70,7 @@
 }
 
 .input-medicaments-search-bar {
+  text-align: center;
   background-color: white;
   width: 177px;
   border-right: 3px solid rgb(128, 128, 128);
@@ -57,8 +82,9 @@
 }
 
 .btn-search-bar i {
-  font-size: 30px;
-  color: black;
+  font-size: 21px;
+  color: rgb(72, 72, 72);
+  padding: 3px 3px 0 0;
 }
 
 .btn-search-bar {
@@ -77,13 +103,42 @@
 }
 
 .big-box-index-pharmacies {
-  background-image: url("map.jpg");
-  background-size: cover;
-  height: 663px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
 
 .div-result-search-pharmacies {
   background-color: rgb(245, 245, 245);
+  width: 80%;
+  padding-top: 20px;
+  border-radius: 15px;
+}
+
+.map {
+  z-index: 1;
+  height: calc(100vh - 135px);
+}
+
+.items-index {
+  z-index: 100;
+  position: relative;
+}
+
+.btn-mes-reservations {
+  background-image: url("https://fiches-pratiques.e-marketing.fr/Assets/Img/FICHEPRATIQUE/2021/10/365359/Comment-generer-facilement-code--F.jpg");
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+.div-btn-mes-reservations {
+  background-color: white;
+  width: fit-content;
+  padding: 12px;
+  border-radius: 50%;
+  border: 1px solid rgb(128, 128, 128);
+  position: absolute;
+  bottom: 70px;
+  left: 20px;
 }
