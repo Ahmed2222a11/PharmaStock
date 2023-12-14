@@ -53,6 +53,7 @@ def create
 
       # Redirige vers la page de la réservation nouvellement créée
       redirect_to booking_path(@booking)
+
     end
   else
     # Rend le formulaire de création de réservation avec des erreurs s'il y a des problèmes lors de la sauvegarde
