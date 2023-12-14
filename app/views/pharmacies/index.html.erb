@@ -23,12 +23,14 @@
           </div>
         </div>
       </div>
+      <% if params[:nom_de_medicament].present? && @pharmacies.present? %>
       <div class="row div-result-search-pharmacies mx-auto">
-        <%if @pharmacies %>
           <% @pharmacies.each do |pharmacie| %>
             <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament )%> a comme médicament: </p>
             <% pharmacie.medicaments.each do |medoc| %>
               <p><%= medoc.nom %></p>
+              <% stock = pharmacie.stocks.find_by(medicament: medoc) %>
+              <p>Stock: <%= stock ? stock.quantite : 0 %></p>
             <% end %>
           <% end %>
         <% end %>
