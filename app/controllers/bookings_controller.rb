@@ -6,12 +6,15 @@ class BookingsController < ApplicationController
   end
 
   def new
-      @quantite = params[:quantite]
-      @booking = Booking.new
-      @booking.user = current_user
-      @pharmacie = Pharmacie.find(params[:pharmacie_id])
-      @booking.pharmacie = @pharmacie
-      @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:medicament]), quantite: params[:quantite].to_i)
+    @quantite = params[:quantite]
+    @booking = Booking.new
+    @booking.user = current_user
+    @pharmacie = Pharmacie.find(params[:pharmacie_id])
+    @booking.pharmacie = @pharmacie
+    @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find(params[:medicament]), quantite: params[:quantite].to_i)
+    if params[:medicament1] && params[:qty1]
+      @bookmed2 = BookingMedicament.new(booking: @booking, medicament: Medicament.find(params[:medicament1]), quantite: params[:qty1].to_i)
+    end
   end
 
 def create
@@ -20,11 +23,23 @@ def create
   @booking.user = current_user
 
   # Associe la pharmacie à la réservation en utilisant l'ID de la pharmacie fourni dans le formulaire
-  @booking.pharmacie = Pharmacie.find(params[:booking_medicament][:pharmacie_id])
+  @booking.pharmacie = Pharmacie.find(params[:booking][:pharmacie_id])
+
 
   if @booking.save
     # Crée un nouvel enregistrement BookingMedicament lié à la réservation et au médicament spécifié
-    @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:booking_medicament][:medicament]), quantite: params[:booking_medicament][:quantite].to_i)
+
+    @bookmed = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:booking][:medicament]), quantite: params[:booking][:quantite].to_i)
+
+    if params[:booking][:medicament2] && params[:booking][:quantite2]
+      @bookmed2 = BookingMedicament.new(booking: @booking, medicament: Medicament.find_by(nom: params[:booking][:medicament2]), quantite: params[:booking][:quantite2].to_i)
+
+      if @bookmed2.save
+        @pharmacie_stock = Stock.find_or_create_by(pharmacie: @booking.pharmacie, medicament: @bookmed2.medicament)
+        new_quantite = @pharmacie_stock.quantite - @bookmed2.quantite
+        @pharmacie_stock.update(quantite: new_quantite)
+      end
+    end
 
     if @bookmed.save
       # Recherche ou crée une nouvelle entrée Stock associée à la pharmacie et au médicament de la réservation

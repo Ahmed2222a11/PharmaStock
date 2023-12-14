@@ -11,17 +11,28 @@
         </div>
         <div class="justify-content-between">
           <div class="d-flex flex-column div-nom-medoc">
-            <h3><% @pharmacie.medicaments.each do |medoc| %>
-                <%= medoc.nom %>
-              <% end %></h3>
+            <h3>
+                <%= @medicament.nom %>
+           </h3>
             <div class="d-flex div-quantite-show-pharma justify-content-start">
               <h5>Quantité :</h5>
               <p> <%= @quantite %> </p>
             </div>
-          </div>
         </div>
+              <% if @medicament1 && @quantite1 %>
+                 <div class="d-flex flex-column div-nom-medoc">
+                  <h3>
+                   <%= @medicament1.nom %>
+                  </h3>
+                  <div class="d-flex div-quantite-show-pharma justify-content-start">
+                    <h5>Quantité :</h5>
+                    <p> <%= @quantite1 %></p>
+                  </div>
+                </div>
+              <% end %>
+          </div>
       </div>
-        <%= link_to "Panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament), class: "btn-panier-show-pharmacie" %>
+        <%= link_to "Panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament, medicament1: @medicament1, qty1: @quantite1), class: "btn-panier-show-pharmacie" %>
     </div>
     <div class="div-infos-pharmacies d-flex flex-column">
       <h3><%= @pharmacie.nom %> </h3>

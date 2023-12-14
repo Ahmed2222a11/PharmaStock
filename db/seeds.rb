@@ -35,7 +35,7 @@ puts "medicaments created"
 
 puts "creation stocks"
 stock_1 = Stock.create!(quantite: 10, pharmacie_id: pharma_1.id, medicament_id: medicament_1.id)
-stock_2 = Stock.create!(quantite: 5, pharmacie_id: pharma_2.id, medicament_id: medicament_2.id)
+stock_2 = Stock.create!(quantite: 5, pharmacie_id: pharma_1.id, medicament_id: medicament_2.id)
 stock_3 = Stock.create!(quantite: 7, pharmacie_id: pharma_3.id, medicament_id: medicament_3.id)
 stock_4 = Stock.create!(quantite: 6, pharmacie_id: pharma_4.id, medicament_id: medicament_4.id)
 puts "stocks created"
