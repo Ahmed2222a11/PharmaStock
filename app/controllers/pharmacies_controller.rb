@@ -19,7 +19,7 @@ before_action :set_pharmacie, only: [:show]
       .where("s1.quantite >= ? AND s2.quantite >= ?", @quantite, @quantite_1).distinct
     elsif !params[:nom_de_medicament].nil? && !params[:quantite].nil?
       @pharmacies = Pharmacie.joins(stocks: :medicament).where("medicaments.nom ILIKE ? AND stocks.quantite >= ?", "%#{params[:nom_de_medicament]}%", params[:quantite].to_i )
-      @medicament = params[:nom_de_medicament]
+      @medicament = Medicament.find_by(nom: params[:nom_de_medicament])
       @quantite = params[:quantite]
     end
     if @pharmacies
@@ -39,8 +39,10 @@ before_action :set_pharmacie, only: [:show]
 
     @medicament = Medicament.find(params[:medicament_id])
     @quantite = params[:quantite]
+    if params[:medicament1] != "" && params[:qty1] != ""
     @medicament1 = Medicament.find(params[:medicament1])
     @quantite1 = params[:qty1]
+    end
 
   end
 
