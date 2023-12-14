@@ -17,15 +17,13 @@
 .div-title-phone {
   background-color: white;
   padding-top: 65px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
   border-bottom: 1px grey solid;
 }
 
 .btn-home-page i {
   background-color: white;
   color: #22B14C;
-  border: 1px grey solid;
+  border: #22B14C 1px solid;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -40,6 +38,7 @@
 
 #nom_de_medicament:focus,
 #quantite:focus {
+  caret-color: transparent;
   border: 1px solid rgb(128, 128, 128);
   border-right: 3px solid rgb(128, 128, 128);
   outline: none !important;
@@ -58,7 +57,7 @@
 .input-medicaments-search-bar,
 .btn-search-bar,
 .btn-home-page i {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px, rgba(0, 0, 0, 0.3) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .input-quantite-search-bar:focus,
