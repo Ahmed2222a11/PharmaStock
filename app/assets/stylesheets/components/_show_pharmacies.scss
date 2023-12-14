@@ -21,7 +21,7 @@
 }
 
 .div-show-pharmacies {
-  background-color: white;
+  background-color: #EBFFF1;
   width: 100%;
   height: 100vh;
 }
@@ -38,7 +38,7 @@
   height: 70px;
   background-image: url("pillule2.jpg");
   background-size: contain;
-  margin: 19px 8px 0 20px;
+  margin: 20px 20px 0 20px;
 }
 
 .div-quantite-show-pharma h5 {
@@ -83,10 +83,11 @@
 .div-infos-pharmacies {
   width: 373px;
   height: auto;
-  background-color: #effbf0;
+  background-color: #f7fff9;
   border: 2px solid #0da700;
   border-radius: 15px;
   margin: 20px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .div-infos-pharmacies h3 {
