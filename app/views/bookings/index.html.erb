@@ -2,20 +2,31 @@
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
   </div>
-  <h2>Mes reservations!!!!!</h2>
-  <div class="container">
-    <div class="card">
-      <div class="card-footer">
-        <% @bookings.each do |booking| %>
-          <p>
-            <%= link_to "Réservation ##{booking.id}", booking_path(booking) %><br>
+  <div class="big-box-index-reservation">
+    <div class="div-index-reservations">
+      <div class="div-btn-home-page d-flex justify-content-start">
+        <%= link_to pharmacies_path, class: "btn-home-page" do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+      </div>
+      <h4>Mes réservations :</h4>
+      <% @bookings.each do |booking| %>
+        <div class="div-each-reservation">
+          <div class="div-reservation">
+            <div class="div-link-reservation d-flex justify-content-between">
+              <%= link_to "", booking_path(booking), class: "link-reservation" %>
+              <%= link_to "info", booking_path(booking), class: "link-reservation-search" %>
+            </div>
+            <p class="text-reservation"><%= "Réservation n°#{booking.id}" %></p>
             <% booking.booking_medicaments.each do |booking_medicament| %>
-              Nom du médicament: <%= booking_medicament.medicament.nom %> - Quantité: <%= booking_medicament.quantite %><br>
-            <% end %>
-            <%= link_to "Cancel reservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cansel-reservation mx-auto" %>
-          <% end %>
-          <%= link_to "Home", pharmacies_path %>
-        </div>
+              <p class="text-reservation"><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></p><br>
+              <% end %>
+            </div>
+            <div class="div-btn-cancel-reservation">
+              <%= link_to "Annuler", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cancel-reservation  mx-auto" %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

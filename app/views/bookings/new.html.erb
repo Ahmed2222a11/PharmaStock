@@ -2,20 +2,22 @@
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
   </div>
-  <div class="div-show-panier">
-    <h4>Votre panier</h4>
-    <%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
-      <%= t.hidden_field :pharmacie_id, value: @pharmacie.id %>
-      <div class="d-flex div-medicaments-panier justify-content-between"  data-controller="plus-moins-panier" data-plus-moins-panier-stock-value="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed.medicament.id).quantite %>">
-        <%= t.hidden_field :medicament, value: @bookmed.medicament.nom %>
-        <h5><%= @bookmed.medicament.nom %></h5>
-        <div class="d-flex div-plus-moins">
-          <i class="fa-solid fa-minus" data-action="click->plus-moins-panier#moins"></i>
-          <p class="input-quantite-panier"> <%= t.number_field :quantite %> </p>
-          <i class="fa-solid fa-plus" data-action="click->plus-moins-panier#plus"></i>
+  <div class="big-box-show-panier">
+    <div class="div-show-panier">
+      <h4>Mon panier :</h4>
+      <%= form_with model: @bookmed, url:bookings_path, method: :post  do |t| %>
+        <%= t.hidden_field :pharmacie_id, value: @pharmacie.id %>
+        <div class="d-flex div-medicaments-panier justify-content-between"  data-controller="plus-moins-panier" data-plus-moins-panier-stock-value="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed.medicament.id).quantite %>">
+          <%= t.hidden_field :medicament, value: @bookmed.medicament.nom %>
+          <h5><%= @bookmed.medicament.nom %></h5>
+          <div class="d-flex div-plus-moins">
+            <i class="fa-solid fa-minus" data-action="click->plus-moins-panier#moins"></i>
+            <p class="input-quantite-panier"> <%= t.number_field :quantite %> </p>
+            <i class="fa-solid fa-plus" data-action="click->plus-moins-panier#plus"></i>
+          </div>
         </div>
-      </div>
-      <%= t.submit value:"Réserver", class:"btn-reserver-panier" %>
-    <% end %>
+        <%= t.submit value:"Réserver", class:"btn-reserver-panier" %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-        <%= link_to "Panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament), class: "btn-panier-show-pharmacie" %>
+      <%= link_to "Panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament), class: "btn-panier-show-pharmacie" %>
     </div>
     <div class="div-infos-pharmacies d-flex flex-column">
       <h3><%= @pharmacie.nom %> </h3>

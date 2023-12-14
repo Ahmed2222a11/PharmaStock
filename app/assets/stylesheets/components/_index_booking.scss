@@ -17,7 +17,76 @@
 .div-title-phone {
   background-color: white;
   padding-top: 65px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
   border-bottom: 1px grey solid;
+}
+
+.big-box-index-reservation {
+  background-color: rgb(253, 249, 249);
+  padding: 20px;
+  height: 100vh;
+}
+
+.div-index-reservations {
+  background-color: #EBFFF1;
+  border: #22B14C 2px solid;
+  height: auto;
+  border-radius: 15px;
+}
+
+.div-each-reservation {
+  height: auto;
+  border: #22B14C 2px solid;
+  border-radius: 15px;
+  background-color: #f7fff9;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.text-reservation {
+  font-size: 18px;
+}
+
+.btn-cancel-reservation {
+  text-decoration: none;
+  padding: 15px 20px;
+  background-color: lightgreen;
+  font-size: 20px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: black;
+  border: 0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.div-btn-cancel-reservation {
+  margin: 0 0 10px 0;
+}
+
+.link-reservation {
+  background-image: url("https://fiches-pratiques.e-marketing.fr/Assets/Img/FICHEPRATIQUE/2021/10/365359/Comment-generer-facilement-code--F.jpg");
+  background-size: cover;
+  width: 42px;
+  height: 42px;
+  display: block;
+}
+
+.link-reservation-search {
+  font-size: 17px;
+  text-decoration: none;
+  color: black;
+  background-color: #EBFFF1;
+  padding: 8px 7px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: #22B14C 2px solid;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.div-link-reservation {
+  margin-bottom: 15px;
+}
+
+.div-btn-home-page {
+  margin-top: 9px;
 }

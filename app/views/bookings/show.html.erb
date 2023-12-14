@@ -5,7 +5,7 @@
   <div class="container">
     <div class="card">
       <div class="card-footer">
-        <h2>Votre reservation</h2>
+        <%= "Réservation n°#{@booking.id}" %>
         <% @booking_medicaments.each do |booking_medicament| %>
           <p>Nom du médicament: <%= booking_medicament.medicament.nom %></p>
           <p>Quantité: <%= booking_medicament.quantite %></p>
