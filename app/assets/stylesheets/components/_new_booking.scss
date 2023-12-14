@@ -25,15 +25,22 @@
 .div-show-panier {
   background-color: white;
   width: 100%;
+  height: 100vh;
+}
+
+.div-show-panier h4 {
+  padding: 20px 0;
 }
 
 .input-quantite-panier input {
   pointer-events: none;
-  width: 20px;
+  width: 38px;
   border-radius: 15px;
-  padding: 0 0 0 4px;
+  padding: 0px 0 0 0px;
   margin: 0 5px;
   border: 1px solid rgb(128, 128, 128);
+  text-align: center;
+  font-weight: bold;
 }
 
 .div-plus-moins h5 {
@@ -45,23 +52,56 @@
 .div-plus-moins p {
   font-size: 19px;
   font-weight: bold;
+  margin: 0;
 }
 
 .div-plus-moins i {
-  border: 2px solid black;
   border-radius: 50%;
   line-height: 1.2;
   font-size: 20px;
   width: 28px;
   height: 28px;
+  background-color: white;
+  border: 1px solid rgb(128, 128, 128);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px, rgba(0, 0, 0, 0.3) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+
+.div-plus-moins .fa-minus:active {
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.div-plus-moins .fa-plus:active {
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .div-medicaments-panier {
   height: auto;
-  width: 100%;
-  margin-bottom: 25px;
+  border: #22B14C 2px solid;
+  border-radius: 10px;
+  background-color: #EBFFF1;
+  padding: 20px;
+  margin: 20px;
 }
 
 .div-medicaments-panier h5 {
-  margin: 0 200px 0 0;
+  margin: 0;
+}
+
+.btn-reserver-panier {
+  text-decoration: none;
+  padding: 15px 20px;
+  background-color: lightgreen;
+  font-size: 20px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: black;
+  border: 0;
+  margin-top: 40px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px, rgba(0, 0, 0, 0.3) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+
+
+.btn-reserver-panier:active {
+  background-color: rgb(120, 252, 120);
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }

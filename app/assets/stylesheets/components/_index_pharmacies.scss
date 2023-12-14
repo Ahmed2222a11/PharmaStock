@@ -38,11 +38,18 @@
   padding-left: 10px;
 }
 
+#nom_de_medicament:focus,
+#quantite:focus {
+  border: 1px solid rgb(128, 128, 128);
+  border-right: 3px solid rgb(128, 128, 128);
+  outline: none !important;
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
 .div-btn-mes-reservations:active,
 .btn-home-page i:active,
 .input-quantite-search-bar:focus,
 .input-medicaments-search-bar:focus {
-  outline: none;
   box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
