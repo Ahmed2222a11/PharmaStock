@@ -15,7 +15,8 @@ before_action :set_pharmacie, only: [:show]
       @markers = @pharmacies.geocoded.map do |pharmacie|
         {
           lat: pharmacie.latitude,
-          lng: pharmacie.longitude
+          lng: pharmacie.longitude,
+          info_window_html: render_to_string(partial: "info_window", locals: {pharmacie: pharmacie})
         }
       end
     end
