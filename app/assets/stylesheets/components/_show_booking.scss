@@ -19,3 +19,25 @@
   padding-top: 65px;
   border-bottom: 1px grey solid;
 }
+
+.div-QR-code svg {
+  transform: scale(0.7);
+}
+
+.big-box-show-reservation {
+  background-color: #EBFFF1;
+  padding: 20px;
+  height: 100vh;
+}
+
+.div-show-reservations {
+  background-color: #EBFFF1;
+  height: auto;
+  border-radius: 15px;
+}
+
+.div-show-reservations p {
+  margin: 20px 0 0 0;
+  font-size: 22px;
+  font-weight: 500;
+}

@@ -21,14 +21,13 @@
 }
 
 .big-box-index-reservation {
-  background-color: rgb(253, 249, 249);
+  background-color: #EBFFF1;
   padding: 20px;
   height: 100vh;
 }
 
 .div-index-reservations {
   background-color: #EBFFF1;
-  border: #22B14C 2px solid;
   height: auto;
   border-radius: 15px;
 }
@@ -45,18 +44,24 @@
 
 .text-reservation {
   font-size: 18px;
+  font-weight: 500;
 }
 
 .btn-cancel-reservation {
   text-decoration: none;
   padding: 15px 20px;
-  background-color: lightgreen;
+  background-color: #ff4b4b;
   font-size: 20px;
   border-radius: 15px;
   font-weight: bold;
   color: black;
   border: 0;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.btn-cancel-reservation:active {
+  background-color: red;
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .div-btn-cancel-reservation {
@@ -81,6 +86,10 @@
   font-weight: bold;
   border: #22B14C 2px solid;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.link-reservation-search:active {
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .div-link-reservation {
