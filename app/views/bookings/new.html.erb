@@ -17,7 +17,7 @@
         </div>
       </div>
       <% if @bookmed2 %>
-        <div class="d-flex div-medicaments-panier justify-content-center" id='stock2' data-stock2="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed2.medicament.id).quantite %>">
+        <div class="d-flex div-medicaments-panier justify-content-between" id='stock2' data-stock2="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed2.medicament.id).quantite %>">
         <%= t.hidden_field :medicament2, value: @bookmed2.medicament.nom %>
         <h5><%= @bookmed2.medicament.nom %></h5>
         <div class="d-flex div-plus-moins">
