@@ -32,6 +32,10 @@
   border-radius: 15px;
 }
 
+.div-index-reservations h4 {
+  margin: 10px 0 40px 0;
+}
+
 .div-each-reservation {
   height: auto;
   border: #22B14C 2px solid;
@@ -45,6 +49,10 @@
 .text-reservation {
   font-size: 18px;
   font-weight: 500;
+}
+
+.text-reservation-empty {
+  font-size: 22px;
 }
 
 .btn-cancel-reservation {
