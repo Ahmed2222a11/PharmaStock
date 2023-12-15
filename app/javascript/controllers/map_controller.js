@@ -36,6 +36,8 @@ export default class extends Controller {
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(this.map)
+        .togglePopup()
+
     })
   }
 

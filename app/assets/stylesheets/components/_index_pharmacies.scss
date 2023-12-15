@@ -40,20 +40,20 @@
 #quantite:focus {
   caret-color: transparent;
   border: 1px solid rgb(128, 128, 128);
-  border-right: 3px solid rgb(128, 128, 128);
   outline: none !important;
-  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .div-btn-mes-reservations:active,
 .btn-home-page i:active,
 .input-quantite-search-bar:focus,
+.input-quantite-search-bar-plus:focus,
 .input-medicaments-search-bar:focus {
   box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .div-btn-mes-reservations,
 .input-quantite-search-bar,
+.input-quantite-search-bar-plus,
 .input-medicaments-search-bar,
 .btn-search-bar,
 .btn_plus,
@@ -74,6 +74,18 @@
   border-right: 3px solid rgb(128, 128, 128);
   border-top: 1px solid rgb(128, 128, 128);
   border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.input-quantite-search-bar-plus {
+  text-align: center;
+  background-color: white;
+  width: 54px;
+  border-left: 0;
+  border-right: 1px solid rgb(128, 128, 128);
+  border-top: 1px solid rgb(128, 128, 128);
+  border-bottom: 1px solid rgb(128, 128, 128);
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .input-medicaments-search-bar {
