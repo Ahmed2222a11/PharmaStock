@@ -10,6 +10,11 @@
         <% end %>
       </div>
       <h4>Mes réservations :</h4>
+      <div class="div-each-reservation">
+        <% if @bookings.empty? %>
+          <p class="text-reservation-empty">Vous n'avez aucune réservation.</p>
+        <% end %>
+      </div>
       <% @bookings.each do |booking| %>
         <div class="div-each-reservation">
           <div class="div-reservation">
@@ -19,7 +24,8 @@
             </div>
             <p class="text-reservation"><%= "Réservation n°#{booking.id}" %></p>
             <% booking.booking_medicaments.each do |booking_medicament| %>
-              <p class="text-reservation"><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></p><br>
+              <p class="text-reservation"><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></p>
+                <br>
               <% end %>
             </div>
             <div class="div-btn-cancel-reservation">
