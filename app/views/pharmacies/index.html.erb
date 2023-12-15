@@ -17,7 +17,6 @@
                   <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament], class: "form-control input-medicaments-search-bar", placeholder: "Nom du médicament" %>
                   <%= number_field_tag "quantite", @quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
                   <button type="submit" class="btn-search-bar">
-                    <i class="fas fa-search"></i>
                   </button>
                   <%= button_tag "+", class: "btn_plus", data: { action: "click->search#addinput" } do %>
                     <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -25,28 +24,12 @@
                 </div>
                 <div class="d-flex justify-content-center form-search-bar">
                   <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament_1], name: "nom_de_medicament_1", class: "form-control input-medicaments-search-bar d-none", placeholder: "Nom du médicament", data: {search_target:"field_one"} %>
-                  <%= number_field_tag "quantite", @quantite, name: "quantite_1", class: "form-control input-quantite-search-bar d-none", placeholder: "Qté" , data: {search_target:"qty_one"}  %>
+                  <%= number_field_tag "quantite", @quantite, name: "quantite_1", class: "form-control input-quantite-search-bar-plus d-none", placeholder: "Qté" , data: {search_target:"qty_one"}  %>
                 </div>
               </div>
             <% end %>
           </div>
         </div>
-      </div>
-      <% if params[:nom_de_medicament].present? && @pharmacies.present? %>
-        <div class="row div-result-search-pharmacies mx-auto">
-          <% @pharmacies.each do |pharmacie| %>
-            <% if @medicament1 != "" && @quantite1 != "" %>
-              <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament, medicament1: @medicament_1, qty1: @quantite_1)%> a comme médicament: </p>
-            <% else %>
-              <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament)%> a comme médicament: </p>
-            <% end %>
-            <% pharmacie.medicaments.each do |medoc| %>
-              <p><%= medoc.nom %></p>
-              <% stock = pharmacie.stocks.find_by(medicament: medoc) %>
-              <p>Stock: <%= stock ? stock.quantite : 0 %></p>
-            <% end %>
-          <% end %>
-        <% end %>
       </div>
     </div>
     <div class="div-btn-mes-reservations items-index">
