@@ -10,11 +10,11 @@
         <% end %>
       </div>
       <h4>Mes réservations :</h4>
-      <div class="div-each-reservation">
-        <% if @bookings.empty? %>
+      <% if @bookings.empty? %>
+        <div class="div-each-reservation">
           <p class="text-reservation-empty">Vous n'avez aucune réservation.</p>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       <% @bookings.each do |booking| %>
         <div class="div-each-reservation">
           <div class="div-reservation">
