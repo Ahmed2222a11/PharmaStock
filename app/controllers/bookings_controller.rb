@@ -67,7 +67,13 @@ def show
   @booking_medicaments = BookingMedicament.where(booking: @booking)
 
   # Génère un QR code basé sur le nom du médicament et la quantité réservée
-  @qrcode = RQRCode::QRCode.new("Médicament: #{@booking_medicaments.first.medicament.nom}, Quantité: #{@booking_medicaments.first.quantite}")
+   # Concatène les informations de chaque médicament dans une seule chaîne
+   qrcode_content = @booking_medicaments.map do |booking_medicament|
+    "Médicament: #{booking_medicament.medicament.nom}, Quantité: #{booking_medicament.quantite}"
+  end.join("\n")
+
+  # Génère un QR code pour la chaîne concaténée
+  @qrcode = RQRCode::QRCode.new(qrcode_content)
 end
 
 def destroy
