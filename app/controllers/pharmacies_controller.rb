@@ -23,11 +23,13 @@ before_action :set_pharmacie, only: [:show]
       @quantite = params[:quantite]
     end
     if @pharmacies
+      @medocs = [@medicament]
+      @medocs << @medicament_1 if @medicament_1 != ""
       @markers = @pharmacies.geocoded.map do |pharmacie|
           {
           lat: pharmacie.latitude,
           lng: pharmacie.longitude,
-          info_window_html: render_to_string(partial: "info_window", locals: {pharmacie: pharmacie}),
+          info_window_html: render_to_string(partial: "info_window", locals: {pharmacie: pharmacie, medicament: @medocs}),
           marker_html: render_to_string(partial: "marker", locals: {pharmacie: pharmacie})
         }
       end
