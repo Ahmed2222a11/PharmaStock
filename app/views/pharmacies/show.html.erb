@@ -1,4 +1,3 @@
-
 <div class="div-phone">
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
@@ -52,25 +51,20 @@
           <span data-action="click->hidden-text#toggleText" >&#x25B6;</span>
             <img src="https://cdn.icon-icons.com/icons2/2645/PNG/512/chevron_down_icon_160252.png" alt="" >
             <div class="tableau-horaires" data-hidden-text-target="display" type = text> %>
-          <%# </span><%= render "toggleText", horaires: @pharmacie %>
-  <div class="d-flex horaires" data-controller="hidden-text">
-    <i class="fa-solid fa-clock"></i>
-    <p>Horaires </p>
-    <span data-action="click->hidden-text#toggleText">
-    <img src="https://cdn.icon-icons.com/icons2/2645/PNG/512/chevron_down_icon_160252.png" alt="">
-      <div class="tableau-horaires hidden" data-hidden-text-target="display">
-        <% if @pharmacie.horaires.present?  %>
-          <p><%= @pharmacie.horaires %></p>
-        <% else %>
-          <p>Cette Pharmacie n'as pas communiquer ses horaires.</p>
-        <% end  %>
-
-
-  </div>
-</div>
-</div>
-
+        <%# </span><%= render "toggleText", horaires: @pharmacie %>
+        <div class="d-flex horaires" data-controller="hidden-text">
+          <i class="fa-solid fa-clock"></i>
+          <p>Horaires </p>
+          <span data-action="click->hidden-text#toggleText">
+            <img src="https://cdn.icon-icons.com/icons2/2645/PNG/512/chevron_down_icon_160252.png" alt="">
+            <div class="tableau-horaires hidden" data-hidden-text-target="display">
+              <% if @pharmacie.horaires.present?  %>
+                <p><%= @pharmacie.horaires %></p>
+              <% else %>
+                <p>Cette Pharmacie n'as pas communiquer ses horaires.</p>
+              <% end  %>
             </div>
+          </div>
         </div>
       </div>
     </div>
