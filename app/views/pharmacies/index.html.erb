@@ -17,6 +17,7 @@
                   <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament], class: "form-control input-medicaments-search-bar", placeholder: "Nom du médicament" %>
                   <%= number_field_tag "quantite", @quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
                   <button type="submit" class="btn-search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
                   <%= button_tag "+", class: "btn_plus", data: { action: "click->search#addinput" } do %>
                     <i class="fa-solid fa-magnifying-glass-plus"></i>
