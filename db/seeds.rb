@@ -21,10 +21,10 @@ Medicament.destroy_all
 puts "destroying all"
 
 puts "creation pharmacies"
-pharma_1 = Pharmacie.create!(nom: "Pharmacie Gounod", adresse: "32 Av. Georges Clemenceau, 06000 Nice", telephone: "0493880492", email: "lol@gmail.com")
-pharma_2 = Pharmacie.create!(nom: "Pharmacie Clemenceau", adresse: "14 Av. Georges Clemenceau, 06000 Nice", telephone: "0493885158", email: "lol2@gmail.com")
-pharma_3 = Pharmacie.create!(nom: "Pharmacie Thiers", adresse: "62 Bd Gambetta, 06000 Nice", telephone: "0493889434", email: "lol3@gmail.com")
-pharma_4 = Pharmacie.create!(nom: "Pharmacie de la Paix", adresse: "5 Av. Georges Clemenceau, 06000 Nice", telephone: "0493886637", email: "lol4@gmail.com")
+pharma_1 = Pharmacie.create!(nom: "Pharmacie Gounod", adresse: "32 Av. Georges Clemenceau, 06000 Nice", telephone: "0493880492", email: "lol@gmail.com", horaires: "9H-12H 13H-18H")
+pharma_2 = Pharmacie.create!(nom: "Pharmacie Clemenceau", adresse: "14 Av. Georges Clemenceau, 06000 Nice", telephone: "0493885158", email: "lol2@gmail.com", horaires:"9H-12H 13H-18H")
+pharma_3 = Pharmacie.create!(nom: "Pharmacie Thiers", adresse: "62 Bd Gambetta, 06000 Nice", telephone: "0493889434", email: "lol3@gmail.com", horaires:"9H-12H 13H-18H")
+pharma_4 = Pharmacie.create!(nom: "Pharmacie de la Paix", adresse: "5 Av. Georges Clemenceau, 06000 Nice", telephone: "0493886637", email: "lol4@gmail.com", horaires:"9H-12H 13H-18H")
 puts "pharmacies created"
 puts "creation medicaments"
 medicament_1 = Medicament.create!(nom: "Doliprane")
