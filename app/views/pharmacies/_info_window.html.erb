@@ -10,7 +10,8 @@
             <% medicament.each do |medoc| %>
               <%= medoc.nom %>
               <% stock = Stock.where(medicament_id: medoc.id, pharmacie_id: pharmacie.id) %>
-                <% if stock.present? %>
+                  <% stock2 = pharmacie.stocks.find_by(medicament: medoc) %>
+                <% if stock2.quantite > 0 %>
               <p>C'est en stock STOCK!!</p>
               <% else %>
               <p>C'est pas en stock PAS STOCK!!</p>
