@@ -24,7 +24,7 @@ puts "creation pharmacies"
 pharma_1 = Pharmacie.create!(nom: "Pharmacie Gounod", adresse: "32 Av. Georges Clemenceau, 06000 Nice", telephone: "0493880492", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h")
 pharma_2 = Pharmacie.create!(nom: "Pharmacie Clemenceau", adresse: "14 Av. Georges Clemenceau, 06000 Nice", telephone: "0493885158", email: "lol2@gmail.com", horaires:"9h-12h / 13h-18h")
 pharma_3 = Pharmacie.create!(nom: "Pharmacie Thiers", adresse: "62 Bd Gambetta, 06000 Nice", telephone: "0493889434", email: "lol3@gmail.com", horaires:"9h-12h / 13h-18h")
-pharma_4 = Pharmacie.create!(nom: "Pharmacie de la Paix", adresse: "5  boulevard Victor Hugo, 06000 Nice", telephone: "0493886637", email: "lol4@gmail.com", horaires:"9h-12h / 13h-18h")
+pharma_4 = Pharmacie.create!(nom: "Pharmacie de Paris", adresse: "60 Av. Jean Médecin, 06000 Nice", telephone: "0493851281", email: "lol4@gmail.com", horaires:"9h-12h / 13h-18h")
 puts "pharmacies created"
 puts "creation medicaments"
 medicament_1 = Medicament.create!(nom: "Doliprane")
