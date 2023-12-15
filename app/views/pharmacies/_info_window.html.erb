@@ -1,4 +1,21 @@
 <h2><%= pharmacie.nom %></h2>
-<div class="badge rounded-pill bg-primary fs-6">
-  <%= pharmacie.nom %>
-</div>
+<% if params[:nom_de_medicament].present? && @pharmacies.present? %>
+        <div class="row div-result-search-pharmacies mx-auto">
+          <% @pharmacies.each do |pharmacie| %>
+            <% if @medicament1 != "" && @quantite1 != "" %>
+              <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament, medicament1: @medicament_1, qty1: @quantite_1)%> a comme médicament: </p>
+            <% else %>
+              <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament)%> a comme médicament: </p>
+            <% end %>
+            <% medicament.each do |medoc| %>
+              <%= medoc.nom %>
+              <% stock = Stock.where(medicament_id: medoc.id, pharmacie_id: pharmacie.id) %>
+                <% if stock.present? %>
+              <p>C'est en stock STOCK!!</p>
+              <% else %>
+              <p>C'est pas en stock PAS STOCK!!</p>
+            <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
