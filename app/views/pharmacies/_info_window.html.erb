@@ -2,9 +2,9 @@
   <div class="row div-result-search-pharmacies mx-auto">
     <% @pharmacies.each do |pharmacie| %>
       <% if @medicament1 != "" && @quantite1 != "" %>
-        <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament, medicament1: @medicament_1, qty1: @quantite_1)%> a comme médicament: </p>
+        <p class="link-nom-pharmacies"><%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament, medicament1: @medicament_1, qty1: @quantite_1), class: "nom-pharmacies"%></p>
       <% else %>
-        <p>La <%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament)%> a comme médicament: </p>
+        <p class="link-nom-pharmacies"><%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament), class: "nom-pharmacies"%></p>
       <% end %>
       <% medicament.each do |medoc| %>
         <div class="d-flex div-medoc-pointeur-map justify-content-center">
@@ -17,7 +17,10 @@
               <i class="fa-solid fa-circle-check"></i>
             </div>
           <% else %>
-            <p>C'est pas en stock PAS STOCK!!</p>
+            <div class="d-flex text-non-stock">
+              <p> Non disponible </p>
+              <i class="fa-solid fa-circle-xmark"></i>
+            </div>
           <% end %>
         </div>
       <% end %>

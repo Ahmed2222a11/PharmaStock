@@ -8,9 +8,15 @@
   // border: 1px grey solid;
 }
 
-.div-phone h1 {
+.title-pharma {
   margin-bottom: 35px;
   color: #22B14C;
+  font-weight: bold;
+}
+
+.title-stock {
+  margin-bottom: 35px;
+  color: #004b91;
   font-weight: bold;
 }
 
@@ -20,21 +26,97 @@
   border-bottom: 1px grey solid;
 }
 
-.div-btn-home {
-  width: 100%;
-  margin-top: 300px;
-  padding: 0 30px;
+.big-box-btn-home {
+  margin: 0;
+  padding: 0;
+  height: 80vh;
+  background: linear-gradient(to bottom right, #22B14C 0%, #EBFFF1 50%, #c9e5ff 50%, #004b91 100%);
 }
 
-.btn-home-pharmacies img,
-.btn-home-veterinaires img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 1px black solid;
+.div-btn-home-pharma-veto {
+  justify-content: space-around;
+}
+
+.div-home-page {
+  background-color: #EBFFF1;
+  width: 100%;
+  height: 100vh;
+}
+
+.div-btn-home-pharmacies {
+  margin-bottom: 20px;
+}
+
+.div-btn-home-veterinaires {
+  margin: 90px 10px 0 0;
+}
+
+.div-btn-home-pharmacies,
+.div-btn-home-veterinaires {
+  align-items: center;
+}
+
+.text-home-pharmacies {
+  border-top: 4px solid #86ffaa;
+  border-left: 4px solid #86ffaa;
+  border-right: 3px solid #0da700;
+  border-bottom: 3px solid #0da700;
+}
+
+.text-home-veterinaires {
+  border-top: 3px solid #004b91;
+  border-left: 3px solid #004b91;
+  border-right: 4px solid #89c6ff;
+  border-bottom: 4px solid #89c6ff;
+}
+
+.text-home-pharmacies,
+.text-home-veterinaires {
+  z-index: 1;
+  background-color: white;
+  border-radius: 15px;
+  padding: 4px 10px;
+  font-weight: 500;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 4px, rgba(14, 30, 37, 0.32) 0px 2px 16px 3px;
+}
+
+.btn-home-veterinaires {
+  border-top: 3px solid #004b91;
+  border-left: 3px solid #004b91;
+  border-right: 4px solid #89c6ff;
+  border-bottom: 4px solid #89c6ff;
+  background-image: url("Grumpy-cat.jpg");
+}
+
+.btn-home-pharmacies {
+  border-top: 4px solid #86ffaa;
+  border-left: 4px solid #86ffaa;
+  border-right: 3px solid #0da700;
+  border-bottom: 3px solid #0da700;
+  background-image: url("Seb-Saunier.jpg");
 }
 
 .btn-home-pharmacies,
 .btn-home-veterinaires {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   text-decoration: none;
+  background-size: cover;
+  align-items: center;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 4px, rgba(14, 30, 37, 0.32) 0px 2px 16px 3px;
+}
+
+.logo-pharma {
+  width: 53vw;
+  height: 24vh;
+  opacity: 0.8;
+  margin: 10px 100px 0px 10px;
+}
+
+.logo-patte-chat {
+  width: 53vw;
+  height: 24vh;
+  opacity: 0.8;
+  margin: 10px 0px 0px 110px;
 }
