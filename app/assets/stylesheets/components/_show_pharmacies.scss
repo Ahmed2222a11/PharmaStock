@@ -8,12 +8,6 @@
   // border: 1px grey solid;
 }
 
-.div-phone h1 {
-  margin-bottom: 35px;
-  color: #22B14C;
-  font-weight: bold;
-}
-
 .div-title-phone {
   background-color: white;
   padding-top: 65px;
@@ -38,7 +32,7 @@
   height: 70px;
   background-image: url("pillule2.jpg");
   background-size: contain;
-  margin: 20px 20px 0 20px;
+  margin: 20px 20px 0 0;
 }
 
 .div-quantite-show-pharma h5 {
@@ -58,12 +52,18 @@
   margin-bottom: 25px;
 }
 
+.div-nom-medoc {
+  margin-right: 20px;
+}
+
 .div-medicaments h3 {
   padding-top: 20px;
   margin: 10px 0 0 0;
+  text-align: start;
 }
 
 .btn-panier-show-pharmacie {
+  height: fit-content;
   text-decoration: none;
   padding: 15px 20px;
   background-color: lightgreen;
@@ -71,8 +71,11 @@
   border-radius: 15px;
   font-weight: bold;
   color: black;
-  margin: 25px 20px 4px 0;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.div-btn-panier-show-pharmacie {
+  margin: 40px;
 }
 
 .btn-panier-show-pharmacie:active {
