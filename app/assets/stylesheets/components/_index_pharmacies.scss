@@ -125,14 +125,8 @@
   padding: 6px 0 0 13px;
 }
 
-.map {
-  z-index: 1;
-  height: calc(100vh - 135px);
-  outline: none !important;
-}
-
 .items-index {
-  z-index: 100;
+  z-index: 1;
   position: relative;
 }
 
@@ -149,8 +143,10 @@
   width: fit-content;
   padding: 12px;
   border-radius: 50%;
+  margin: 0 0 30px 20px;
   border: 1px solid rgb(128, 128, 128);
-  position: absolute;
-  bottom: 70px;
-  left: 15px;
+}
+
+.div-search-bar-btn-reservation {
+  height: 80vh;
 }
