@@ -92,3 +92,9 @@
 .popup-fade-in.show {
   opacity: 1;
 }
+
+.map {
+  z-index: 0;
+  height: 80vh;
+  outline: none !important;
+}
