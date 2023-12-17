@@ -23,45 +23,32 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
-      const customMarker = document.createElement("div");
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
+      const customMarker = document.createElement("div")
 
       const markerOptions = {
         color: 'red'
       };
 
-      const mapboxMarker = new mapboxgl.Marker(markerOptions)
+      new mapboxgl.Marker(markerOptions)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
-        .addTo(this.map);
-
-      const customMarkerInstance = new mapboxgl.Marker(customMarker)
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
-        .addTo(this.map);
+        .addTo(this.map)
 
       if (window.location.href.includes("nom_de_medicament")) {
-        customMarkerInstance.togglePopup();
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([marker.lng, marker.lat])
+          .setPopup(popup)
+          .addTo(this.map)
+          .togglePopup()
       } else {
-        customMarkerInstance.togglePopup();
-        customMarker.innerHTML = marker.marker_html;
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(this.map)
+          .togglePopup()
+        customMarker.innerHTML = marker.marker_html
       }
-
-      // Ajouter la classe pour la transition
-      setTimeout(() => {
-        popup.getElement().classList.add('popup-fade-in');
-      }, 0);
-
-      // Ajouter un événement pour supprimer la classe après l'animation
-      popup.on('close', () => {
-        popup.getElement().classList.remove('show');
-      });
-
-      // Ajouter un événement pour ajouter la classe lors de l'ouverture
-      popup.on('open', () => {
-        popup.getElement().classList.add('show');
-      });
-    });
+    })
   }
 
   #fitMapToMarkers() {
