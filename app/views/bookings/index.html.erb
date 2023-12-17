@@ -1,6 +1,7 @@
 <div class="div-phone">
   <div class="d-flex div-title-phone justify-content-center">
-    <h1 class="title-pharma">Pharma</h1><h1 class="title-stock">Stock</h1>
+    <h1 class="title-pharma">Pharma</h1>
+    <h1 class="title-stock">Stock</h1>
   </div>
   <div class="big-box-index-reservation">
     <div class="div-index-reservations">
@@ -11,8 +12,9 @@
       </div>
       <h4>Mes réservations :</h4>
       <% if @bookings.empty? %>
-        <div class="div-each-reservation">
-          <p class="text-reservation-empty">Vous n'avez aucune réservation.</p>
+        <div class="div-each-reservation d-flex flex-column justify-content-center">
+          <p class="text-reservation-empty">Vous n'avez aucune réservation...</p>
+          <%= image_tag "panier-pharma.png", class: "logo-panier-pharma" %>
         </div>
       <% end %>
       <% @bookings.each do |booking| %>
