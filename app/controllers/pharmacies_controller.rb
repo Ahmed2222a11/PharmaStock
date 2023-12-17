@@ -47,6 +47,10 @@ before_action :set_pharmacie, only: [:show]
 
   end
 
+  def show2
+
+  end
+
 private
 
 def set_pharmacie

@@ -19,6 +19,7 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.#infoMarkers()
   }
 
 
@@ -53,11 +54,16 @@ export default class extends Controller {
     })
   }
 
-  #fitMapToMarkers() {
-    const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
-    this.map.fitBounds(bounds, { padding:40, maxZoom: 15, duration: 0 })
+
+  #infoMarkers() {
+    const divResultSearchPharmacies = document.querySelector('.div-result-search-pharmacies');
+    divResultSearchPharmacies.classList.remove('d-none');
   }
 
 
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds()
+    this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
+    this.map.fitBounds(bounds, { padding: 40, maxZoom: 15, duration: 0 })
+  }
 }
