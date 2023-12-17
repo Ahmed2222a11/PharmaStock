@@ -95,6 +95,6 @@
 
 .map {
   z-index: 0;
-  height: 80vh;
+  height: calc(100vh - 135px);
   outline: none !important;
 }
