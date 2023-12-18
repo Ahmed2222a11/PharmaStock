@@ -38,6 +38,7 @@
 }
 
 .div-btn-mes-reservations:active,
+.div-btn-garde:active,
 .btn-home-page i:active,
 .input-quantite-search-bar:focus,
 .input-quantite-search-bar-plus:focus,
@@ -46,6 +47,7 @@
 }
 
 .div-btn-mes-reservations,
+.div-btn-garde,
 .input-quantite-search-bar,
 .input-quantite-search-bar-plus,
 .input-medicaments-search-bar,
@@ -115,7 +117,8 @@
   text-align: center;
 }
 
-.btn-search-bar i, .btn_plus i {
+.btn-search-bar i,
+.btn_plus i {
   font-size: 21px;
   color: rgb(72, 72, 72);
   padding: 3px 3px 0 0;
@@ -130,23 +133,75 @@
   position: relative;
 }
 
-.btn-mes-reservations {
-  background-image: url("https://fiches-pratiques.e-marketing.fr/Assets/Img/FICHEPRATIQUE/2021/10/365359/Comment-generer-facilement-code--F.jpg");
+.btn-mes-reservations,
+.btn-garde {
   background-size: cover;
   width: 35px;
   height: 35px;
   display: block;
 }
 
-.div-btn-mes-reservations {
+.btn-mes-reservations {
+  background-image: url("https://fiches-pratiques.e-marketing.fr/Assets/Img/FICHEPRATIQUE/2021/10/365359/Comment-generer-facilement-code--F.jpg");
+}
+
+.div-btn-garde a {
+  text-decoration: none;
+    color: #22B14C;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 7px 3px 0 0;
+}
+
+.div-btn-mes-reservations,
+.div-btn-garde {
   background-color: white;
-  width: fit-content;
   padding: 12px;
   border-radius: 50%;
+}
+
+.div-btn-mes-reservations {
   margin: 0 0 30px 20px;
   border: 1px solid rgb(128, 128, 128);
 }
 
+.div-btn-garde {
+  margin: 0 20px 30px 0;
+  border: #22B14C 1px solid;
+}
+
 .div-search-bar-btn-reservation {
   height: 80vh;
+}
+
+.text-garde {
+  font-size: 14px;
+  align-items: end;
+  height: 35px;
+}
+
+.text-garde p {
+  padding-left: 20px;
+}
+
+.logo_gyrophare {
+  width: 67px;
+  height: 55px;
+}
+
+.text-stock,
+.text-non-stock {
+  padding-left: 4px;
+}
+
+.text-stock i {
+  color: #31d931;
+  font-size: 21px;
+  padding-left: 10px;
+}
+
+.text-non-stock i {
+  color: red;
+  font-size: 21px;
+  padding-left: 10px;
 }
