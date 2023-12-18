@@ -12,7 +12,7 @@
             <i class="fa-solid fa-house"></i>
           <% end %>
           <%= form_tag(pharmacies_path, method: :get, data: { controller: "search"}) do %>
-            <div class="d-flex flex-column align-items-start">
+                      <div class="d-flex flex-column align-items-start">
               <div class="d-flex justify-content-center form-search-bar">
                 <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament], class: "form-control input-medicaments-search-bar", placeholder: "Nom du médicament" %>
                 <%= number_field_tag "quantite", @quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
@@ -38,7 +38,11 @@
     </div>
   </div>
   <div class="div-btn-mes-reservations items-index">
+  <% if @veto %>
+    <%= link_to "", bookings_path(veto: @veto), class:"btn-mes-reservations" %>
+    <% else %>
     <%= link_to "", bookings_path, class:"btn-mes-reservations" %>
+          <% end %>
   </div>
     <div class="div-btn-garde items-index">
     <%= link_to "", pharmacies_path(de_garde: true), class: "btn-garde" %>

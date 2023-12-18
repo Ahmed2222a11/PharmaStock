@@ -2,7 +2,13 @@ class BookingsController < ApplicationController
 
 
   def index
-    @bookings = Booking.where(user: current_user)
+    if session[:veto]
+      pharmacies_ids = Pharmacie.where(veto: true).pluck(:id)
+    else
+      pharmacies_ids = Pharmacie.where(veto: false).pluck(:id)
+    end
+    #  ou pharmacies_ids = params[:veto] ? Pharmacie.where(veto: true).pluck(:id) : Pharmacie.where(veto: false).pluck(:id)
+    @bookings = Booking.where(pharmacie_id: pharmacies_ids)
   end
 
   def new
@@ -62,6 +68,7 @@ def create
 end
 
 def show
+
   # Récupère la réservation et les médicaments associés pour l'affichage
   @booking = Booking.find(params[:id])
   @booking_medicaments = BookingMedicament.where(booking: @booking)
