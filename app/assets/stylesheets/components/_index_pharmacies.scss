@@ -150,3 +150,22 @@
 .div-search-bar-btn-reservation {
   height: 80vh;
 }
+
+.btn-garde {
+  background-image: url("https://www.saint-brevin.com/medias/images/prestataires/pharmacies-1397.jpg");
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+.div-btn-garde {
+  background-color: white;
+  width: fit-content;
+  padding: 12px;
+  border-radius: 50%;
+  border: 1px solid rgb(128, 128, 128);
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+}

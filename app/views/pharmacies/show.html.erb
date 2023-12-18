@@ -5,6 +5,7 @@
   <div class="div-show-pharmacies">
     <div class="div-img-pharmacies">
     </div>
+        <% unless @pharmacie.de_garde %>
     <div class="div-medicaments d-flex justify-content-center">
       <div class="d-flex">
         <div class="div-img-medicaments">
@@ -40,6 +41,8 @@
     <div class="div-btn-panier-show-pharmacie">
       <%= link_to "Ajouter au panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament, medicament1: @medicament1, qty1: @quantite1), class: "btn-panier-show-pharmacie" %>
       </div>
+      <% end %>
+
     <div class="div-infos-pharmacies d-flex flex-column">
       <h3><%= @pharmacie.nom %> </h3>
       <div class="infos-pharmacies">

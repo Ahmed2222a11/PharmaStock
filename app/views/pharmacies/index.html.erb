@@ -3,7 +3,7 @@
     <h1 class="title-pharma">Pharma</h1>
     <h1 class="title-stock">Stock</h1>
   </div>
-  <div data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+<div data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="map">
     <div class="d-flex flex-column justify-content-between div-search-bar-btn-reservation">
       <div class="big-box-index-pharmacies items-index justify-content-start" data-controller="search medicament">
@@ -31,9 +31,16 @@
           <% end %>
         </div>
       </div>
-        <div class="d-flex div-btn-mes-reservations items-index">
-          <%= link_to "", bookings_path, class:"btn-mes-reservations" %>
-        </div>
+      <% end %>
+  <div data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="map">
+    <div class="big-box-index-pharmacies items-index" data-controller="search medicament">
     </div>
   </div>
+  <div class="div-btn-mes-reservations items-index">
+    <%= link_to "", bookings_path, class:"btn-mes-reservations" %>
+  </div>
+    <div class="div-btn-garde items-index">
+    <%= link_to "", pharmacies_path(de_garde: true), class: "btn-garde" %>
+    </div>
 </div>
