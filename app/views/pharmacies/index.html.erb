@@ -43,6 +43,10 @@
     </div>
   </div>
   <div class="div-btn-mes-reservations items-index">
+  <% if @veto %>
+    <%= link_to "", bookings_path(veto: @veto), class:"btn-mes-reservations" %>
+    <% else %>
     <%= link_to "", bookings_path, class:"btn-mes-reservations" %>
+          <% end %>
   </div>
 </div>
