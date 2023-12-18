@@ -6,12 +6,10 @@
 
   h5 {
     font-size: 14px;
-    background-color: #f7fff994;
     position: absolute;
     margin-top: 0.5vh;
     padding: 8px;
-    border-radius: 30px;
-    border: #22b14cb8 2px solid;
+    border-radius: 15px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 
@@ -20,6 +18,16 @@
     color: black;
   }
 
+}
+
+.marker-pharmacies-veto h5 {
+  border: #004b91db 2px solid;
+  background-color: #f7f9ff94;
+}
+
+.marker-pharmacies-human h5 {
+  border: #22b14cb8 2px solid;
+  background-color: #f7fff994;
 }
 
 .div-medoc-pointeur-map {
@@ -41,13 +49,21 @@
 }
 
 .div-result-search-pharmacies {
-  background-color: #f7fff9;
-  border: #22B14C 2px solid;
   width: auto;
   height: auto;
   padding-top: 20px;
   border-radius: 15px;
   padding-top: 20px;
+}
+
+.div-result-search-pharmacies-human {
+  background-color: #f7fff9;
+  border: #22B14C 2px solid;
+}
+
+.div-result-search-pharmacies-veto {
+  background-color: #f7f9ff;
+  border: #004b91 2px solid;
 }
 
 .nom-pharmacies {

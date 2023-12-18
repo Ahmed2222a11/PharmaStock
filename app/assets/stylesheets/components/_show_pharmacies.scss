@@ -23,8 +23,15 @@
 .div-img-pharmacies {
   width: 100%;
   height: 250px;
-  background-image: url("https://www.alliance-healthcare.fr/sites/g/files/xpfdlm151/files/inline-images/Pharmacie%20%281%29.jpg");
   background-size: cover;
+}
+
+.div-img-pharmacies-human {
+  background-image: url("https://www.alliance-healthcare.fr/sites/g/files/xpfdlm151/files/inline-images/Pharmacie%20%281%29.jpg");
+}
+
+.div-img-pharmacies-veto {
+  background-image: url("https://boursin-agencement.fr/wp-content/uploads/2018/07/2018_boursin_agencement_clinique_veterinaire_vaudois_comptoir_salle_attente.jpg");
 }
 
 .div-img-medicaments {
