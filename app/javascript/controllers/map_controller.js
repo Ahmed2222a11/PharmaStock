@@ -75,6 +75,10 @@ export default class extends Controller {
   }
 
 
+  #infoMarkers() {
+    const divResultSearchPharmacies = document.querySelector('.div-result-search-pharmacies');
+    divResultSearchPharmacies.classList.remove('d-none');
+  }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
