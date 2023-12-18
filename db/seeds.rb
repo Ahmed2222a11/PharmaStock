@@ -39,3 +39,27 @@ stock_2 = Stock.create!(quantite: 5, pharmacie_id: pharma_1.id, medicament_id: m
 stock_3 = Stock.create!(quantite: 7, pharmacie_id: pharma_3.id, medicament_id: medicament_3.id)
 stock_4 = Stock.create!(quantite: 6, pharmacie_id: pharma_4.id, medicament_id: medicament_4.id)
 puts "stocks created"
+
+
+puts "creation veterinaires"
+veto_5 = Pharmacie.create!(nom: "Clinique vétérinaire Gambetta", adresse: "85 Bd Gambetta, 06000 Nice", telephone: "0493971080", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
+veto_6 = Pharmacie.create!(nom: "Clinique vétérinaire Berlioz", adresse: "17 Rue Berlioz, 06000 Nice", telephone: "0493873942", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
+veto_7 = Pharmacie.create!(nom: "Clinique vétérinaire Argos", adresse: "16 Rue Lamartine, 06000 Nice", telephone: "0493859727", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
+veto_8 = Pharmacie.create!(nom: "Clinique vétérinaire de Cimiez", adresse: "4 Bd de Cimiez, 06000 Nice", telephone: "0493850158", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
+puts "veterinaires created"
+
+
+puts "creation medicaments veterinaires"
+medicament_5 = Medicament.create!(nom: "Fortekor")
+medicament_6 = Medicament.create!(nom: "Emeprid")
+medicament_7 = Medicament.create!(nom: "Semintra")
+medicament_8 = Medicament.create!(nom: "Pangram")
+puts "medicaments created"
+
+
+puts "creation stocks veterinaires"
+stock_5 = Stock.create!(quantite: 8, medicament_id: medicament_5.id, pharmacie_id: veto_5.id)
+stock_6 = Stock.create!(quantite: 3, medicament_id: medicament_6.id, pharmacie_id: veto_5.id)
+stock_7 = Stock.create!(quantite: 9, medicament_id: medicament_7.id, pharmacie_id: veto_7.id)
+stock_8 = Stock.create!(quantite: 4, medicament_id: medicament_8.id, pharmacie_id: veto_8.id)
+puts "stocks created"

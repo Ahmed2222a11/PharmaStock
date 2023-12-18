@@ -1,16 +1,19 @@
 import { Controller } from "@hotwired/stimulus"
+import { Turbo } from "@hotwired/turbo-rails"
 import mapboxgl from 'mapbox-gl' // Don't forget this!
 // Connects to data-controller="map"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    session: Boolean,
   }
 
 
 
   connect() {
-    console.log(this.markersValue);
+    Turbo.session.drive = false
+    console.log(this.sessionValue);
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -31,8 +34,8 @@ export default class extends Controller {
         // Draw an arrow next to the location dot to indicate which direction the device is heading.
         showUserHeading: true
       })
-      );
-      this.#infoMarkers()
+    );
+    // this.#infoMarkers()
 
   }
 
@@ -42,9 +45,9 @@ export default class extends Controller {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
       const customMarker = document.createElement("div")
-
+      const color = this.sessionValue ? '#0766AD' : 'red'
       const markerOptions = {
-        color: 'red'
+        color: color,
       };
 
       new mapboxgl.Marker(markerOptions)
@@ -75,14 +78,18 @@ export default class extends Controller {
   }
 
 
-  #infoMarkers() {
-    const divResultSearchPharmacies = document.querySelector('.div-result-search-pharmacies');
-    divResultSearchPharmacies.classList.remove('d-none');
-  }
+  // #infoMarkers() {
+  //   const divResultSearchPharmacies = document.querySelector('div-result-search-pharmacies');
+  //   divResultSearchPharmacies.classList.remove('d-none');
+  // }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
     this.map.fitBounds(bounds, { padding: 40, maxZoom: 15, duration: 0 })
   }
+
+  // disconnect() {
+  //   Turbo.session.drive = true
+  // }
 }

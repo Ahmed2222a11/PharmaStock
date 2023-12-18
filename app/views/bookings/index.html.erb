@@ -6,7 +6,7 @@
   <div class="big-box-index-reservation">
     <div class="div-index-reservations">
       <div class="div-btn-home-page d-flex justify-content-start">
-        <%= link_to pharmacies_path, class: "btn-home-page" do %>
+        <%= link_to pharmacies_path, class: session[:veto] ? "btn-home-page btn-home-page-veto" : "btn-home-page btn-home-page-human" do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
       </div>

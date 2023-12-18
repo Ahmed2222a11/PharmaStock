@@ -2,12 +2,12 @@
   <div class="div-title-phone">
     <h1>PharmaStock</h1>
   </div>
-  <div id="map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+  <div id="map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-session-value="<%= session[:veto] %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="map">
     <div class="d-flex flex-column justify-content-between div-search-bar-btn-reservation">
       <div class="big-box-index-pharmacies items-index" data-controller="search medicament">
         <div class="d-flex div-form-index">
-          <%= link_to root_path, class: "btn-home-page" do %>
+          <%= link_to root_path, class: session[:veto] ? "btn-home-page btn-home-page-veto" : "btn-home-page btn-home-page-human" do %>
             <i class="fa-solid fa-house"></i>
           <% end %>
           <%= form_tag(pharmacies_path, method: :get, data: { controller: "search"}) do %>
