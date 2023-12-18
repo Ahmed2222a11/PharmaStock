@@ -8,12 +8,6 @@
   // border: 1px grey solid;
 }
 
-.div-phone h1 {
-  margin-bottom: 35px;
-  color: #22B14C;
-  font-weight: bold;
-}
-
 .div-title-phone {
   background-color: white;
   padding-top: 65px;
@@ -32,8 +26,8 @@
   font-size: 30px;
 }
 
-.btn-home-page {
-  padding-left: 10px;
+.big-box-index-pharmacies {
+  padding: 20px;
 }
 
 #nom_de_medicament:focus,
@@ -131,26 +125,8 @@
   padding: 6px 0 0 13px;
 }
 
-.big-box-index-pharmacies {
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-.div-result-search-pharmacies {
-  background-color: rgb(245, 245, 245);
-  width: 80%;
-  padding-top: 20px;
-  border-radius: 15px;
-}
-
-.map {
-  z-index: 1;
-  height: calc(100vh - 135px);
-  outline: none !important;
-}
-
 .items-index {
-  z-index: 100;
+  z-index: 1;
   position: relative;
 }
 
@@ -167,10 +143,12 @@
   width: fit-content;
   padding: 12px;
   border-radius: 50%;
+  margin: 0 0 30px 20px;
   border: 1px solid rgb(128, 128, 128);
-  position: absolute;
-  bottom: 70px;
-  left: 20px;
+}
+
+.div-search-bar-btn-reservation {
+  height: 80vh;
 }
 
 .btn-garde {

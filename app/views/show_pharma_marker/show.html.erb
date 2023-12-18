@@ -1,48 +1,16 @@
 <div class="div-phone">
   <div class="d-flex div-title-phone justify-content-center">
-    <h1 class="title-pharma">Pharma</h1><h1 class="title-stock">Stock</h1>
+    <h1 class="title-pharma">Pharma</h1>
+    <h1 class="title-stock">Stock</h1>
   </div>
   <div class="div-show-pharmacies">
     <div class="div-img-pharmacies">
     </div>
-        <% unless @pharmacie.de_garde %>
-    <div class="div-medicaments d-flex justify-content-center">
-      <div class="d-flex">
-        <div class="div-img-medicaments">
-        </div>
-        <div class="justify-content-between">
-          <div class="d-flex flex-column div-nom-medoc">
-            <h3>
-              <%= @medicament.nom %>
-            </h3>
-            <div class="d-flex div-quantite-show-pharma justify-content-start">
-              <h5>Quantité :</h5>
-              <p> <%= @quantite %> </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% if @medicament1 && @quantite1 %>
-        <div class="d-flex">
-          <div class="div-img-medicaments">
-          </div>
-          <div class="d-flex flex-column div-nom-medoc">
-            <h3>
-              <%= @medicament1.nom %>
-            </h3>
-            <div class="d-flex div-quantite-show-pharma justify-content-start">
-              <h5>Quantité :</h5>
-              <p> <%= @quantite1 %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+    <div class="div-btn-back-index-pharma-page d-flex justify-content-end">
+    <%= link_to pharmacies_path, class: "btn-back-show-reservation" do %>
+          <i class="fa-solid fa-circle-arrow-left"></i>
+        <% end %>
     </div>
-    <div class="div-btn-panier-show-pharmacie">
-      <%= link_to "Ajouter au panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament, medicament1: @medicament1, qty1: @quantite1), class: "btn-panier-show-pharmacie" %>
-      </div>
-      <% end %>
-
     <div class="div-infos-pharmacies d-flex flex-column">
       <h3><%= @pharmacie.nom %> </h3>
       <div class="infos-pharmacies">

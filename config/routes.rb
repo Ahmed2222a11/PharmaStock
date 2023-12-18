@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:create, :edit, :update, :show, :destroy, :new, :index]
 
+
+  get 'show_pharma_marker/:id', to: 'show_pharma_marker#show', as: 'show_pharma_marker'
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

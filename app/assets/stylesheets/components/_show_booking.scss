@@ -8,12 +8,6 @@
   // border: 1px grey solid;
 }
 
-.div-phone h1 {
-  margin-bottom: 35px;
-  color: #22B14C;
-  font-weight: bold;
-}
-
 .div-title-phone {
   background-color: white;
   padding-top: 65px;
@@ -40,4 +34,25 @@
   margin: 20px 0 0 0;
   font-size: 22px;
   font-weight: 500;
+}
+
+.fa-circle-arrow-left {
+  padding-top: 9px !important;
+}
+
+.btn-back-show-reservation {
+  background-color: white;
+  color: #22B14C;
+  border: #22B14C 1px solid;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-weight: 900;
+  font-size: 30px;
+  margin-left: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.btn-back-show-reservation:active {
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
