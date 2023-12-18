@@ -28,23 +28,6 @@
   font-weight: 500;
 }
 
-.text-stock,
-.text-non-stock {
-  padding-left: 4px;
-}
-
-.text-stock i {
-  color: #31d931;
-  font-size: 21px;
-  padding-left: 10px;
-}
-
-.text-non-stock i {
-  color: red;
-  font-size: 21px;
-  padding-left: 10px;
-}
-
 .mapboxgl-popup-content {
   background-color: transparent;
   animation-name: example;
@@ -92,12 +75,6 @@
 
 .mapboxgl-popup-tip {
   border-color: transparent !important;
-}
-
-.popup-fade-in {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  /* Vous pouvez ajuster la durée et le type de transition selon vos préférences */
 }
 
 .popup-fade-in.show {

@@ -80,7 +80,6 @@ before_action :set_pharmacie, only: [:show]
     Pharmacie.order("RANDOM()").first.update(de_garde: true)
   end
 
-
 private
 
 def set_pharmacie
