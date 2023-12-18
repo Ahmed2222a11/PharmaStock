@@ -1,5 +1,8 @@
 .marker-pharmacies {
   width: 12vh;
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.5,1.8,0.4,0.6);
 
   h5 {
     font-size: 14px;
@@ -44,6 +47,14 @@
 
 .mapboxgl-popup-content {
   background-color: transparent;
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.5,1.8,0.4,0.6);
+}
+
+@keyframes example {
+  from {opacity: 0; transform: scale(0.4)}
+  to {opacity: 1; transform: scale(1)}
 }
 
 .div-result-search-pharmacies {
