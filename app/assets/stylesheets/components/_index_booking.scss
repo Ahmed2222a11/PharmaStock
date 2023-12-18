@@ -42,6 +42,17 @@
 
 .logo-panier-pharma {
   margin-top: 20px;
+  width: 100%;
+  height: 340px;
+  background-size: cover;
+}
+
+.logo-panier-pharma-human {
+  background-image: url("panier-pharma.png");
+}
+
+.logo-panier-pharma-veto {
+  background-image: url("panier-veto.png");
 }
 
 .text-reservation {

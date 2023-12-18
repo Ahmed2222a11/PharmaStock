@@ -14,7 +14,7 @@
       <% if @bookings.empty? %>
         <div class="div-each-reservation d-flex flex-column justify-content-center">
           <p class="text-reservation-empty">Vous n'avez aucune réservation...</p>
-          <%= image_tag "panier-pharma.png", class: "logo-panier-pharma" %>
+          <div class="<%= session[:veto] ? "logo-panier-pharma logo-panier-pharma-veto" : "logo-panier-pharma logo-panier-pharma-human" %>"></div>
         </div>
       <% end %>
       <% @bookings.each do |booking| %>

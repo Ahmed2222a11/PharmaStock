@@ -45,7 +45,7 @@ export default class extends Controller {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
       const customMarker = document.createElement("div")
-      const color = this.sessionValue ? '#0766AD' : 'red'
+      const color = this.sessionValue ? '#19A7CE' : 'red'
       const markerOptions = {
         color: color,
       };
