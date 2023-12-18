@@ -8,7 +8,7 @@
         <%= link_to pharmacies_path, class: "btn-home-page" do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
-        <%= link_to bookings_path, class: "btn-back-show-reservation" do %>
+          <%= link_to bookings_path, class: "btn-back-show-reservation" do %>
           <i class="fa-solid fa-circle-arrow-left"></i>
         <% end %>
       </div>
@@ -17,11 +17,11 @@
         <% @booking_medicaments.each do |booking_medicament| %>
           <p><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></strong></p>
         <% end %>
-        <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center">
         <div class="div-QR-code">
           <%= @qrcode.as_svg.html_safe if @qrcode.present? %>
         </div>
-        </div>
+                </div>
         <div class="div-btn-cancel-reservation">
           <%= link_to "Annuler", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cancel-reservation  mx-auto" %>
         </div>

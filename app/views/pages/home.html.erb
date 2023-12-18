@@ -9,12 +9,12 @@
       </div>
       <div class="d-flex div-btn-home-pharma-veto">
         <div class="d-flex flex-column div-btn-home-pharmacies">
-          <%= link_to pharmacies_path, class: "btn-home-pharmacies" do %>
+          <%= link_to pharmacies_path(veto: false), class: "btn-home-pharmacies" do %>
           <% end %>
           <p class="text-home-pharmacies">C'est pour vous ?</p>
         </div>
         <div class="d-flex flex-column div-btn-home-veterinaires">
-          <%= link_to pharmacies_path, class: "btn-home-veterinaires" do %>
+          <%= link_to pharmacies_path(veto: true), class: "btn-home-veterinaires" do %>
           <% end %>
           <p class="text-home-veterinaires">Ou votre annimal ?</p>
         </div>
