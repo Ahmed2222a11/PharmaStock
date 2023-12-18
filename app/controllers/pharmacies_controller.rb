@@ -1,6 +1,12 @@
 class PharmaciesController < ApplicationController
 before_action :set_pharmacie, only: [:show]
   def index
+    if params[:de_garde]
+      @pharmacie_de_garde = Pharmacie.find_by(de_garde: true)
+      # Masquer la barre de recherche dans la vue
+      # @hide_search = true
+
+    else
     @pharmacies = Pharmacie.all
     # if params[:medicament] != ""
     #   @pharmacies = Pharmacie.where(["medicament= ?", params[:medicament]])
@@ -22,6 +28,7 @@ before_action :set_pharmacie, only: [:show]
       @medicament = Medicament.find_by(nom: params[:nom_de_medicament])
       @quantite = params[:quantite]
     end
+  end
     if @pharmacies
       @medocs = [@medicament]
       @medocs << @medicament_1 if @medicament_1 != ""
@@ -34,17 +41,34 @@ before_action :set_pharmacie, only: [:show]
         }
       end
     end
+    if @pharmacie_de_garde&.geocoded?
+      @markers = [{
+        lat: @pharmacie_de_garde.latitude,
+        lng: @pharmacie_de_garde.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { pharmacie: @pharmacie_de_garde }),
+        marker_html: render_to_string(partial: "marker", locals: { pharmacie: @pharmacie_de_garde })
+      }]
+    end
   end
 
   def show
-
+    if @pharmacie.de_garde
+      # Si la pharmacie est de garde, ne chargez pas les médicaments
+      @medicament = nil
+      @medicament1 = nil
+    else
     @medicament = Medicament.find(params[:medicament_id])
     @quantite = params[:quantite]
     if params[:medicament1] != "" && params[:qty1] != ""
     @medicament1 = Medicament.find(params[:medicament1])
     @quantite1 = params[:qty1]
     end
+  end
+  end
 
+  def set_pharmacie_de_garde
+    Pharmacie.update_all(de_garde: false)  # Réinitialiser le statut de garde
+    Pharmacie.order("RANDOM()").first.update(de_garde: true)
   end
 
 private

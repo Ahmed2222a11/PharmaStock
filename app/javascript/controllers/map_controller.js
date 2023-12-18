@@ -22,6 +22,7 @@ export default class extends Controller {
   }
 
   #addMarkersToMap() {
+
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
       const customMarker = document.createElement("div")
@@ -33,6 +34,12 @@ export default class extends Controller {
         .addTo(this.map)
 
       if (window.location.href.includes("nom_de_medicament")) {
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([marker.lng, marker.lat])
+          .setPopup(popup)
+          .addTo(this.map)
+          .togglePopup()
+      } else if (window.location.href.includes("de_garde")) {
         new mapboxgl.Marker(customMarker)
           .setLngLat([marker.lng, marker.lat])
           .setPopup(popup)
