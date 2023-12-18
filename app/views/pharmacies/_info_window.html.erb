@@ -1,13 +1,10 @@
   <% if @pharmacie_de_garde.present? %>
-    <div class="row div-result-search-pharmacies mx-auto">
-  <p>La <%= link_to @pharmacie_de_garde.nom, pharmacy_path(id: @pharmacie_de_garde.id), class: "nom-pharmacie" %> est en garde </p>
+  <div class="row div-result-search-pharmacies mx-auto">
+    <p class="link-nom-pharmacies"><%= link_to @pharmacie_de_garde.nom, pharmacy_path(id: @pharmacie_de_garde.id), class: "nom-pharmacies" %></p>
+  <div class="d-flex justify-content-center text-garde">
+    <p>De garde ce soir</p> <%= image_tag "gyrophare.png", class: "logo_gyrophare" %>
   </div>
-
-
-
-
-
-
+  </div>
 <% elsif params[:nom_de_medicament].present? && @pharmacies.present? %>
   <div class="row div-result-search-pharmacies mx-auto">
     <% @pharmacies.each do |pharmacie| %>
@@ -35,5 +32,5 @@
         </div>
       <% end %>
     <% end %>
-    <% end %>
+  <% end %>
 </div>

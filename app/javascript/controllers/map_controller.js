@@ -19,7 +19,6 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    this.#infoMarkers()
   }
 
 
@@ -60,11 +59,6 @@ export default class extends Controller {
     })
   }
 
-
-  #infoMarkers() {
-    const divResultSearchPharmacies = document.querySelector('.div-result-search-pharmacies');
-    divResultSearchPharmacies.classList.remove('d-none');
-  }
 
 
   #fitMapToMarkers() {
