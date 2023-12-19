@@ -14,7 +14,7 @@
           <%= form_tag(pharmacies_path, method: :get, data: { controller: "search"}) do %>
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex justify-content-center form-search-bar">
-                <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament], class: "form-control input-medicaments-search-bar", placeholder: "Nom du médicament" %>
+                <%= select_tag "nom_de_medicament", options_from_collection_for_select(Medicament.all, "nom", "nom", selected: params[:nom_de_medicament]), class: "form-control input-medicaments-search-bar", prompt: "Nom du médicament"  %>
                 <%= number_field_tag "quantite", @quantite, class: "form-control input-quantite-search-bar", placeholder: "Qté" %>
                 <button type="submit" class="btn-search-bar">
                   <i class="fa-solid fa-magnifying-glass"></i>
@@ -24,7 +24,7 @@
                 <% end %>
               </div>
               <div class="d-flex justify-content-center form-search-bar">
-                <%= text_field_tag "nom_de_medicament", params[:nom_de_medicament_1], name: "nom_de_medicament_1", class: "form-control input-medicaments-search-bar d-none", placeholder: "Nom du médicament", data: {search_target:"field_one"} %>
+                <%= select_tag "nom_de_medicament_1", options_from_collection_for_select(Medicament.all, 'nom', "nom", selected: params[:nom_de_medicament_1]), class: "form-control input-medicaments-search-bar", prompt: "Nom du médicament" %>
                 <%= number_field_tag "quantite", @quantite, name: "quantite_1", class: "form-control input-quantite-search-bar-plus d-none", placeholder: "Qté" , data: {search_target:"qty_one"}  %>
               </div>
             </div>
