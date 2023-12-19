@@ -47,14 +47,18 @@
 
 .div-btn-mes-reservations:active,
 .div-btn-garde:active,
+.div-btn-geoloc:active,
+.div-btn-refresh-index:active,
 .btn-home-page i:active,
 .input-quantite-search-bar:focus,
 .input-quantite-search-bar-plus:focus,
 .select2-selection--single:focus {
-  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important;
 }
 
 .div-btn-mes-reservations,
+.div-btn-refresh-index,
+.div-btn-geoloc,
 .div-btn-garde,
 .input-quantite-search-bar,
 .input-quantite-search-bar-plus,
@@ -92,21 +96,32 @@
   border-top-right-radius: 15px;
 }
 
+.select2 {
+  width: 177px !important;
+}
+
 .select2-selection--single {
   display: flex !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
   align-items: center !important;
   text-align: center !important;
   background-color: white !important;
-  width: 177px !important;
   height: 38px !important;
   border-right: 3px solid rgb(128, 128, 128) !important;
   border-top: 1px solid rgb(128, 128, 128) !important;
   border-bottom: 1px solid rgb(128, 128, 128) !important;
   border-left: 1px solid rgb(128, 128, 128) !important;
   border-radius: 15px 0 0 15px !important;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 0px 0px 0px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 0px 0px 0px !important;
+}
 
+.select2-selection__arrow {
+  height: 26px !important;
+  position: absolute !important;
+  top: 1px !important;
+  right: 7px !important;
+  width: 20px !important;
+  transform: scale(1.3) !important;
 }
 
 .btn_plus {
@@ -147,54 +162,90 @@
 }
 
 .btn-mes-reservations,
-.btn-garde {
+.btn-garde,
+.btn-geoloc,
+.btn-refresh-index {
   background-size: cover;
   width: 35px;
   height: 35px;
   display: block;
 }
 
+.btn-geoloc {
+  background-image: url("cursor_map.png");
+  background-color: white;
+  border: 0;
+}
+
+.div-btn-geoloc-veto button {
+  background-image: url("cursor-map-veto.png");
+}
+
+.div-btn-geoloc-human button {
+  background-image: url("cursor-map-human.png");
+}
+
+.div-btn-refresh-index-veto a {
+  background-image: url("logo-refresh-veto.png");
+}
+
+.div-btn-refresh-index-human a {
+  background-image: url("logo-refresh-human.png");
+}
+
 .btn-mes-reservations {
   background-image: url("https://fiches-pratiques.e-marketing.fr/Assets/Img/FICHEPRATIQUE/2021/10/365359/Comment-generer-facilement-code--F.jpg");
 }
 
-.div-btn-garde a {
+.div-btn-garde a,
+.div-btn-geoloc a {
   text-decoration: none;
-    font-size: 16px;
-    font-weight: 900;
-    padding: 7px 3px 0 0;
+  font-size: 16px;
+  font-weight: 900;
 }
 
-.div-btn-garde-veto a {
-  color: #004b91;
+.div-btn-garde a {
+  padding: 7px 3px 0 0;
 }
 
-.div-btn-garde-human a {
-  color: #22B14C;
+.div-btn-mes-reservations {
+  margin: 0 0 30px 20px;
+}
+
+.div-btn-garde {
+  margin: 0 10px 0 0;
+}
+
+.div-btn-geoloc {
+  margin: 0 20px 10px 0;
+}
+
+.div-btn-refresh-index {
+  margin: 0 20px 10px;
 }
 
 .div-btn-mes-reservations,
-.div-btn-garde {
+.div-btn-garde,
+.div-btn-geoloc,
+.div-btn-refresh-index {
+  height: fit-content;
   background-color: white;
   padding: 12px;
   border-radius: 50%;
 }
 
-.div-btn-mes-reservations {
-  margin: 0 0 30px 20px;
-  border: 1px solid rgb(128, 128, 128);
-}
-
-.div-btn-garde {
-  margin: 0 20px 30px 0;
-}
-
-.div-btn-garde-human {
-  border: #22B14C 1px solid;
-}
-
-.div-btn-garde-veto {
+.div-btn-geoloc-veto,
+.div-btn-garde-veto,
+.div-btn-refresh-index-veto,
+.div-btn-mes-reservations-veto {
   border: #004b91 1px solid;
+}
+
+.div-btn-geoloc-human,
+.div-btn-garde-human,
+.div-btn-refresh-index-human,
+.div-btn-mes-reservations-human {
+  border: #22B14C 1px solid;
 }
 
 .div-search-bar-btn-reservation {
