@@ -8,33 +8,26 @@
   // border: 1px grey solid;
 }
 
-.div-phone h1 {
-  margin-bottom: 35px;
-  color: #22B14C;
-  font-weight: bold;
-}
-
 .div-title-phone {
   background-color: white;
   padding-top: 65px;
   border-bottom: 1px grey solid;
 }
 
-.big-box-show-panier {
-  background-color: rgb(253, 249, 249);
-  padding: 20px;
+.div-show-panier {
+  height: 100vh;
 }
 
-.div-show-panier {
+.div-show-panier-human {
   background-color: #EBFFF1;
-  border: #22B14C 2px solid;
-  height: 75vh;
-  border-radius: 15px;
+}
+
+.div-show-panier-veto {
+  background-color: #c7daf7b8;
 }
 
 .div-show-panier h4 {
   padding: 20px 0;
-  margin-top: 20px;
 }
 
 .input-quantite-panier input {
@@ -81,12 +74,20 @@
 
 .div-medicaments-panier {
   height: auto;
-  border: #22B14C 2px solid;
   border-radius: 15px;
-  background-color: #f7fff9;
   padding: 20px;
   margin: 20px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.div-medicaments-panier-human {
+  border: #22B14C 2px solid;
+  background-color: #f7fff9;
+}
+
+.div-medicaments-panier-veto {
+  border: #0E6BA8 2px solid;
+  background-color: #e6f0f7;
 }
 
 .div-medicaments-panier h5 {
@@ -96,7 +97,6 @@
 .btn-reserver-panier {
   text-decoration: none;
   padding: 15px 20px;
-  background-color: lightgreen;
   font-size: 20px;
   border-radius: 15px;
   font-weight: bold;
@@ -106,8 +106,23 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
+.btn-reserver-panier-human {
+  background-color: lightgreen;
+}
+
+.btn-reserver-panier-veto {
+  background-color: #8ec3e9;
+}
+
 
 .btn-reserver-panier:active {
-  background-color: rgb(120, 252, 120);
   box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.btn-reserver-panier-human:active {
+  background-color: rgb(120, 252, 120);
+}
+
+.btn-reserver-panier-veto:active {
+  background-color: #52b9f5;
 }

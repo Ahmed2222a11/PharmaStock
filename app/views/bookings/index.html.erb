@@ -1,25 +1,33 @@
 <div class="div-phone">
-  <div class="div-title-phone">
-    <h1>PharmaStock</h1>
+  <div class="d-flex div-title-phone justify-content-center">
+    <h1 class="title-pharma">Pharma</h1>
+    <h1 class="title-stock">Stock</h1>
   </div>
-  <div class="big-box-index-reservation">
-    <div class="div-index-reservations">
-      <div class="div-btn-home-page d-flex justify-content-start">
-        <%= link_to pharmacies_path, class: "btn-home-page" do %>
-          <i class="fa-solid fa-house"></i>
-        <% end %>
-      </div>
+  <div class="<%= session[:veto] ? "big-box-show-reservation big-box-show-reservation-veto" : "big-box-show-reservation big-box-show-reservation-human" %>">
+    <div class="<%= session[:veto] ? "div-show-reservations div-show-reservations-veto" : "div-show-reservations div-show-reservations-human" %>">
+      <div class="div-btn-back-index-reservation-page d-flex justify-content-end">
+      <%= link_to pharmacies_path, class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      <% end %>
+    </div>
       <h4>Mes réservations :</h4>
+      <% if @bookings.empty? %>
+        <div class="<%= session[:veto] ? "d-flex flex-column div-each-reservation div-each-reservation-veto" : "d-flex flex-column div-each-reservation div-each-reservation-human" %>">
+          <p class="text-reservation-empty">Vous n'avez aucune réservation...</p>
+          <div class="<%= session[:veto] ? "logo-panier-pharma logo-panier-pharma-veto" : "logo-panier-pharma logo-panier-pharma-human" %>"></div>
+        </div>
+      <% end %>
       <% @bookings.each do |booking| %>
-        <div class="div-each-reservation">
+        <div class="<%= session[:veto] ? "div-each-reservation div-each-reservation-veto" : "div-each-reservation div-each-reservation-human" %>">
           <div class="div-reservation">
             <div class="div-link-reservation d-flex justify-content-between">
               <%= link_to "", booking_path(booking), class: "link-reservation" %>
-              <%= link_to "info", booking_path(booking), class: "link-reservation-search" %>
+              <%= link_to "info", booking_path(booking), class: session[:veto] ? "link-reservation-search link-reservation-search-veto" : "link-reservation-search link-reservation-search-human" %>
             </div>
             <p class="text-reservation"><%= "Réservation n°#{booking.id}" %></p>
             <% booking.booking_medicaments.each do |booking_medicament| %>
-              <p class="text-reservation"><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></p><br>
+              <p class="text-reservation"><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></p>
+                <br>
               <% end %>
             </div>
             <div class="div-btn-cancel-reservation">

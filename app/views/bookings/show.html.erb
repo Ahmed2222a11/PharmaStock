@@ -1,24 +1,27 @@
 <div class="div-phone">
-  <div class="div-title-phone">
-    <h1>PharmaStock</h1>
+  <div class="d-flex div-title-phone justify-content-center">
+    <h1 class="title-pharma">Pharma</h1><h1 class="title-stock">Stock</h1>
   </div>
-  <div class="big-box-show-reservation">
-    <div class="div-show-reservations">
-      <div class="div-btn-home-page d-flex justify-content-start">
-        <%= link_to pharmacies_path, class: "btn-home-page" do %>
+  <div class="<%= session[:veto] ? "big-box-show-reservation big-box-show-reservation-veto" : "big-box-show-reservation big-box-show-reservation-human" %>">
+    <div class="<%= session[:veto] ? "div-show-reservations div-show-reservations-veto" : "div-show-reservations div-show-reservations-human" %>">
+      <div class="div-btn-home-page d-flex justify-content-between">
+        <%= link_to pharmacies_path, class: session[:veto] ? "btn-home-page btn-home-page-veto" : "btn-home-page btn-home-page-human" do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
+          <%= link_to bookings_path, class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
+          <i class="fa-solid fa-circle-arrow-left"></i>
+        <% end %>
       </div>
-      <div class="div-each-reservation">
+      <div class="<%= session[:veto] ? "div-each-reservation div-each-reservation-veto" : "div-each-reservation div-each-reservation-human" %>">
         <p><%= "Réservation n°#{@booking.id}" %></p>
         <% @booking_medicaments.each do |booking_medicament| %>
           <p><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></strong></p>
         <% end %>
-        <div class="d-flex justify-content-center">
-          <div class="div-QR-code">
-            <%= @qrcode.as_svg.html_safe if @qrcode.present? %>
-          </div>
+                <div class="d-flex justify-content-center">
+        <div class="div-QR-code">
+          <%= @qrcode.as_svg.html_safe if @qrcode.present? %>
         </div>
+                </div>
         <div class="div-btn-cancel-reservation">
           <%= link_to "Annuler", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-cancel-reservation  mx-auto" %>
         </div>

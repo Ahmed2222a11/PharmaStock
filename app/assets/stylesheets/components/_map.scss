@@ -1,0 +1,104 @@
+.marker-pharmacies {
+  width: 12vh;
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.5,1.8,0.4,0.6);
+
+  h5 {
+    font-size: 14px;
+    position: absolute;
+    margin-top: 0.5vh;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .nom-marker-pharmacies {
+    text-decoration: none;
+    color: black;
+  }
+
+}
+
+.marker-pharmacies-veto h5 {
+  border: #004b91db 2px solid;
+  background-color: #f7f9ff94;
+}
+
+.marker-pharmacies-human h5 {
+  border: #22b14cb8 2px solid;
+  background-color: #f7fff994;
+}
+
+.div-medoc-pointeur-map {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mapboxgl-popup-content {
+  background-color: transparent;
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.5,1.8,0.4,0.6);
+}
+
+@keyframes example {
+  from {opacity: 0; transform: scale(0.4)}
+  to {opacity: 1; transform: scale(1)}
+}
+
+.div-result-search-pharmacies {
+  width: auto;
+  height: auto;
+  padding-top: 20px;
+  border-radius: 15px;
+  padding-top: 20px;
+}
+
+.div-result-search-pharmacies-human {
+  background-color: #f7fff9;
+  border: #22B14C 2px solid;
+}
+
+.div-result-search-pharmacies-veto {
+  background-color: #f7f9ff;
+  border: #004b91 2px solid;
+}
+
+.nom-pharmacies {
+  text-decoration: none;
+  outline: none !important;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  font-family: roboto;
+}
+
+.link-nom-pharmacies {
+  padding: 0;
+}
+
+.mapboxgl-popup-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.mapboxgl-popup-close-button {
+  display: none !important;
+}
+
+.mapboxgl-popup-tip {
+  border-color: transparent !important;
+}
+
+.popup-fade-in.show {
+  opacity: 1;
+}
+
+.map {
+  z-index: 0;
+  height: calc(100vh - 135px);
+  outline: none !important;
+}
