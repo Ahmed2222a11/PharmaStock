@@ -155,10 +155,17 @@
 
 .div-btn-garde a {
   text-decoration: none;
-    color: #22B14C;
     font-size: 16px;
     font-weight: 900;
     padding: 7px 3px 0 0;
+}
+
+.div-btn-garde-veto a {
+  color: #004b91;
+}
+
+.div-btn-garde-human a {
+  color: #22B14C;
 }
 
 .div-btn-mes-reservations,
@@ -175,7 +182,14 @@
 
 .div-btn-garde {
   margin: 0 20px 30px 0;
+}
+
+.div-btn-garde-human {
   border: #22B14C 1px solid;
+}
+
+.div-btn-garde-veto {
+  border: #004b91 1px solid;
 }
 
 .div-search-bar-btn-reservation {
