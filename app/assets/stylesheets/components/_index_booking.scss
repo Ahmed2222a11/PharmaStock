@@ -14,30 +14,26 @@
   border-bottom: 1px grey solid;
 }
 
-.big-box-index-reservation {
-  background-color: #EBFFF1;
-  padding: 20px;
-  height: 100vh;
-}
-
-.div-index-reservations {
-  background-color: #EBFFF1;
-  height: auto;
-  border-radius: 15px;
-}
-
-.div-index-reservations h4 {
+.div-show-reservations h4 {
   margin: 10px 0 40px 0;
 }
 
 .div-each-reservation {
   height: auto;
-  border: #22B14C 2px solid;
   border-radius: 15px;
-  background-color: #f7fff9;
   padding: 20px;
   margin: 20px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.div-each-reservation-human {
+  background-color: #f7fff9;
+  border: 2px solid #0da700;
+}
+
+.div-each-reservation-veto {
+  background-color: #f7f9ff;
+  border: 2px solid #004b91;
 }
 
 .logo-panier-pharma {
@@ -82,7 +78,7 @@
 }
 
 .div-btn-cancel-reservation {
-  margin: 0 0 10px 0;
+  margin: 20px 0 10px 0;
 }
 
 .link-reservation {
@@ -97,12 +93,20 @@
   font-size: 17px;
   text-decoration: none;
   color: black;
-  background-color: #EBFFF1;
   padding: 8px 7px;
   border-radius: 10px;
   font-weight: bold;
-  border: #22B14C 2px solid;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.link-reservation-search-human {
+  background-color: #f7fff9;
+  border: 2px solid #0da700;
+}
+
+.link-reservation-search-veto {
+  background-color: #f7f9ff;
+  border: 2px solid #004b91;
 }
 
 .link-reservation-search:active {
