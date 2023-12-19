@@ -35,8 +35,9 @@ export default class extends Controller {
         showUserHeading: true
       })
     );
-    // this.#infoMarkers()
+
     this.markerOnClick()
+    this.focusGeoloc()
   }
 
 
@@ -58,18 +59,18 @@ export default class extends Controller {
         .addTo(this.map)
 
 
-        new mapboxgl.Marker(customMarker)
-          .setLngLat([marker.lng, marker.lat])
-          // .setPopup(popup)
-          .addTo(this.map)
-          .togglePopup()
-          customMarker.innerHTML = marker.marker_html
+      new mapboxgl.Marker(customMarker)
+        .setLngLat([marker.lng, marker.lat])
+        // .setPopup(popup)
+        .addTo(this.map)
+        .togglePopup()
+      customMarker.innerHTML = marker.marker_html
 
     })
   }
 
-  markerOnClick () {
-    if (window.location.href.includes('nom_de_medicament') || window.location.href.includes('de_garde'))  {
+  markerOnClick() {
+    if (window.location.href.includes('nom_de_medicament') || window.location.href.includes('de_garde')) {
       const markers = document.querySelectorAll('.mapboxgl-marker-anchor-center')
       const popups = document.querySelectorAll('.marker-pharmacies')
       markers.forEach((marker) => {
@@ -90,10 +91,13 @@ export default class extends Controller {
     }
   }
 
-  // #infoMarkers() {
-  //   const divResultSearchPharmacies = document.querySelector('div-result-search-pharmacies');
-  //   divResultSearchPharmacies.classList.remove('d-none');
-  // }
+  focusGeoloc() {
+    document.querySelector(".btn-geoloc").addEventListener("click", (event) => {
+      event.preventDefault()
+      const geo = document.querySelector(".mapboxgl-ctrl-geolocate")
+      geo.click()
+    })
+  }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
