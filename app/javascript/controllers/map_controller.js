@@ -36,7 +36,7 @@ export default class extends Controller {
       })
     );
     // this.#infoMarkers()
-
+    this.markerOnClick()
   }
 
 
@@ -48,35 +48,47 @@ export default class extends Controller {
       const color = this.sessionValue ? '#19A7CE' : 'red'
       const markerOptions = {
         color: color,
+        id: 'toto'
       };
 
       new mapboxgl.Marker(markerOptions)
         .setLngLat([marker.lng, marker.lat])
+
         .setPopup(popup)
         .addTo(this.map)
 
-      if (window.location.href.includes("nom_de_medicament")) {
+
         new mapboxgl.Marker(customMarker)
           .setLngLat([marker.lng, marker.lat])
-          .setPopup(popup)
+          // .setPopup(popup)
           .addTo(this.map)
           .togglePopup()
-      } else if (window.location.href.includes("de_garde")) {
-        new mapboxgl.Marker(customMarker)
-          .setLngLat([marker.lng, marker.lat])
-          .setPopup(popup)
-          .addTo(this.map)
-          .togglePopup()
-      } else {
-        new mapboxgl.Marker(customMarker)
-          .setLngLat([marker.lng, marker.lat])
-          .addTo(this.map)
-          .togglePopup()
-        customMarker.innerHTML = marker.marker_html
-      }
+          customMarker.innerHTML = marker.marker_html
+
     })
   }
 
+  markerOnClick () {
+    if (window.location.href.includes('nom_de_medicament') || window.location.href.includes('de_garde'))  {
+      const markers = document.querySelectorAll('.mapboxgl-marker-anchor-center')
+      const popups = document.querySelectorAll('.marker-pharmacies')
+      markers.forEach((marker) => {
+        marker.addEventListener('click', () => {
+          popups.forEach((popup) => {
+            popup.classList.add('d-none')
+          })
+        })
+      })
+      document.addEventListener('click', () => {
+        const bigPopup = document.querySelector('.mapboxgl-popup-content')
+        if (!bigPopup) {
+          popups.forEach((popup) => {
+            popup.classList.remove('d-none')
+          })
+        }
+      })
+    }
+  }
 
   // #infoMarkers() {
   //   const divResultSearchPharmacies = document.querySelector('div-result-search-pharmacies');
