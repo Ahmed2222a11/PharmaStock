@@ -5,7 +5,7 @@
   <div class="<%= session[:veto] ? "big-box-show-reservation big-box-show-reservation-veto" : "big-box-show-reservation big-box-show-reservation-human" %>">
     <div class="<%= session[:veto] ? "div-show-reservations div-show-reservations-veto" : "div-show-reservations div-show-reservations-human" %>">
       <div class="div-btn-home-page d-flex justify-content-between">
-        <%= link_to pharmacies_path, class: session[:veto] ? "btn-home-page btn-home-page-veto" : "btn-home-page btn-home-page-human" do %>
+        <%= link_to pharmacies_path(veto: session[:veto]), class: session[:veto] ? "btn-home-page btn-home-page-veto" : "btn-home-page btn-home-page-human" do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
           <%= link_to bookings_path, class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
