@@ -19,15 +19,29 @@
 }
 
 .big-box-show-reservation {
-  background-color: #EBFFF1;
   padding: 20px;
   height: 100vh;
 }
 
-.div-show-reservations {
+.big-box-show-reservation-human {
   background-color: #EBFFF1;
+}
+
+.big-box-show-reservation-veto {
+  background-color: #c7daf7b8;
+}
+
+.div-show-reservations {
   height: auto;
   border-radius: 15px;
+}
+
+.div-show-reservations-human {
+  background-color: #EBFFF1;
+}
+
+.div-show-reservations-veto {
+  background-color: #c7daf7b8;
 }
 
 .div-show-reservations p {

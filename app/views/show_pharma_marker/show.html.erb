@@ -3,7 +3,7 @@
     <h1 class="title-pharma">Pharma</h1>
     <h1 class="title-stock">Stock</h1>
   </div>
-  <div class="div-show-pharmacies">
+  <div class="<%= session[:veto] ? "div-show-pharmacies div-show-pharmacies-veto" : "div-show-pharmacies div-show-pharmacies-human" %>">
     <div class="<%= session[:veto] ? "div-img-pharmacies div-img-pharmacies-veto" : "div-img-pharmacies div-img-pharmacies-human" %>">
     </div>
     <div class="div-btn-back-index-pharma-page d-flex justify-content-end">
@@ -11,7 +11,7 @@
           <i class="fa-solid fa-circle-arrow-left"></i>
         <% end %>
     </div>
-    <div class="div-infos-pharmacies d-flex flex-column">
+    <div class="<%= session[:veto] ? "div-infos-pharmacies div-infos-pharmacies-veto d-flex flex-column" : "div-infos-pharmacies div-infos-pharmacies-human d-flex flex-column" %>">
       <h3><%= @pharmacie.nom %> </h3>
       <div class="infos-pharmacies">
         <div class="d-flex">
