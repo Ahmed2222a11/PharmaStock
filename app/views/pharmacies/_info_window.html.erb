@@ -1,36 +1,35 @@
   <% if @pharmacie_de_garde.present? %>
   <div class="<%= session[:veto] ? "row div-result-search-pharmacies div-result-search-pharmacies-veto mx-auto" : "row div-result-search-pharmacies div-result-search-pharmacies-human mx-auto" %>">
     <p class="link-nom-pharmacies"><%= link_to @pharmacie_de_garde.nom, pharmacy_path(id: @pharmacie_de_garde.id), class: "nom-pharmacies" %></p>
-  <div class="d-flex justify-content-center text-garde">
-    <p>De garde ce soir</p> <%= image_tag "gyrophare.png", class: "logo_gyrophare" %>
-  </div>
+    <div class="d-flex justify-content-center text-garde">
+      <p>De garde ce soir</p>
+      <%= image_tag "gyrophare.png", class: "logo_gyrophare" %>
+    </div>
   </div>
 <% elsif params[:nom_de_medicament].present? && @pharmacies.present? %>
   <div class="<%= session[:veto] ? "row div-result-search-pharmacies div-result-search-pharmacies-veto mx-auto" : "row div-result-search-pharmacies div-result-search-pharmacies-human mx-auto" %>">
-    <% @pharmacies.each do |pharmacie| %>
-      <% if @medicament1 != "" && @quantite1 != "" %>
-        <p class="link-nom-pharmacies"><%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament, medicament1: @medicament_1, qty1: @quantite_1), class: "nom-pharmacies"%></p>
-      <% else %>
-        <p class="link-nom-pharmacies"><%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament), class: "nom-pharmacies"%></p>
-      <% end %>
-      <% medicament.each do |medoc| %>
-        <div class="d-flex div-medoc-pointeur-map justify-content-center">
-          <p> <%= medoc.nom %> - </p>
-          <% stock = Stock.where(medicament_id: medoc.id, pharmacie_id: pharmacie.id) %>
-          <% stock2 = pharmacie.stocks.find_by(medicament: medoc) %>
-          <% if stock2.quantite > 0 %>
-            <div class="d-flex text-stock">
-              <p> En stock </p>
-              <i class="fa-solid fa-circle-check"></i>
-            </div>
-          <% else %>
-            <div class="d-flex text-non-stock">
-              <p> Non disponible </p>
-              <i class="fa-solid fa-circle-xmark"></i>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+    <% if @medicament1 != "" && @quantite1 != "" %>
+      <p class="link-nom-pharmacies"><%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament, medicament1: @medicament_1, qty1: @quantite_1), class: "nom-pharmacies"%></p>
+    <% else %>
+      <p class="link-nom-pharmacies"><%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament), class: "nom-pharmacies"%></p>
+    <% end %>
+    <% medicament.each do |medoc| %>
+      <div class="d-flex div-medoc-pointeur-map justify-content-center">
+        <p> <%= medoc.nom %> - </p>
+        <% stock = Stock.where(medicament_id: medoc.id, pharmacie_id: pharmacie.id) %>
+        <% stock2 = pharmacie.stocks.find_by(medicament: medoc) %>
+        <% if stock2.quantite > 0 %>
+          <div class="d-flex text-stock">
+            <p> En stock </p>
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+        <% else %>
+          <div class="d-flex text-non-stock">
+            <p> Non disponible </p>
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>

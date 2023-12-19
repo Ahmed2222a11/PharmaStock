@@ -3,11 +3,11 @@
     <h1 class="title-pharma">Pharma</h1>
     <h1 class="title-stock">Stock</h1>
   </div>
-  <div class="div-show-pharmacies">
+  <div class="<%= session[:veto] ? "div-show-pharmacies div-show-pharmacies-veto" : "div-show-pharmacies div-show-pharmacies-human" %>">
     <div class="<%= session[:veto] ? "div-img-pharmacies div-img-pharmacies-veto" : "div-img-pharmacies div-img-pharmacies-human" %>">
     </div>
     <div class="div-btn-back-index-pharma-page d-flex justify-content-end">
-      <%= link_to pharmacies_path, class: "btn-back-show-reservation" do %>
+      <%= link_to pharmacies_path, class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
         <i class="fa-solid fa-circle-arrow-left"></i>
       <% end %>
     </div>
@@ -45,10 +45,10 @@
         <% end %>
       </div>
       <div class="div-btn-panier-show-pharmacie">
-        <%= link_to "Ajouter au panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament, medicament1: @medicament1, qty1: @quantite1), class: "btn-panier-show-pharmacie" %>
+        <%= link_to "Ajouter au panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament, medicament1: @medicament1, qty1: @quantite1), class:  session[:veto] ? "btn-panier-show-pharmacie btn-panier-show-pharmacie-veto d-flex flex-column" : "btn-panier-show-pharmacie btn-panier-show-pharmacie-human d-flex flex-column" %>
       </div>
     <% end %>
-    <div class="div-infos-pharmacies d-flex flex-column">
+    <div class="<%= session[:veto] ? "div-infos-pharmacies div-infos-pharmacies-veto d-flex flex-column" : "div-infos-pharmacies div-infos-pharmacies-human d-flex flex-column" %>">
       <h3><%= @pharmacie.nom %> </h3>
       <div class="infos-pharmacies">
         <div class="d-flex">
