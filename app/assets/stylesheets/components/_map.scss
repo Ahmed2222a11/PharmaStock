@@ -102,3 +102,9 @@
   height: calc(100vh - 135px);
   outline: none !important;
 }
+
+.mapboxgl-ctrl-geolocate {
+  display: none !important;
+}
+// const geo = document.querySelector(".mapboxgl-ctrl-geolocate")
+// geo.click()

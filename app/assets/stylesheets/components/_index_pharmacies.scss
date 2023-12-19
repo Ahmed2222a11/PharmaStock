@@ -50,7 +50,7 @@
 .btn-home-page i:active,
 .input-quantite-search-bar:focus,
 .input-quantite-search-bar-plus:focus,
-.input-medicaments-search-bar:focus {
+.select2-selection--single:focus {
   box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
@@ -58,7 +58,6 @@
 .div-btn-garde,
 .input-quantite-search-bar,
 .input-quantite-search-bar-plus,
-.input-medicaments-search-bar,
 .btn-search-bar,
 .btn_plus,
 .btn-home-page i {
@@ -73,6 +72,7 @@
 .input-quantite-search-bar {
   text-align: center;
   background-color: white;
+  border-radius: 0;
   width: 54px;
   border-left: 0;
   border-right: 3px solid rgb(128, 128, 128);
@@ -92,16 +92,21 @@
   border-top-right-radius: 15px;
 }
 
-.input-medicaments-search-bar {
-  text-align: center;
-  background-color: white;
-  width: 177px;
-  border-right: 3px solid rgb(128, 128, 128);
-  border-top: 1px solid rgb(128, 128, 128);
-  border-bottom: 1px solid rgb(128, 128, 128);
-  border-left: 1px solid rgb(128, 128, 128);
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
+.select2-selection--single {
+  display: flex !important;
+  font-size: 14px !important;
+  align-items: center !important;
+  text-align: center !important;
+  background-color: white !important;
+  width: 177px !important;
+  height: 38px !important;
+  border-right: 3px solid rgb(128, 128, 128) !important;
+  border-top: 1px solid rgb(128, 128, 128) !important;
+  border-bottom: 1px solid rgb(128, 128, 128) !important;
+  border-left: 1px solid rgb(128, 128, 128) !important;
+  border-radius: 15px 0 0 15px !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 0px 0px 0px;
+
 }
 
 .btn_plus {
