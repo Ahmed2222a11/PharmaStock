@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_18_104409) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_19_101619) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_18_104409) do
     t.string "horaires"
     t.boolean "de_garde"
     t.boolean "veto", default: false
+    t.boolean "veto_garde", default: false
   end
 
   create_table "stocks", force: :cascade do |t|

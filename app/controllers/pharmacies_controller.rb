@@ -7,13 +7,18 @@ before_action :set_pharmacie, only: [:show]
     if @veto = params[:veto] == "false"
       session[:veto] = false
     end
-    if session[:veto]
+
+    if params[:de_garde] && session[:veto]
+      @pharmacie_de_garde = Pharmacie.find_by(veto: true, de_garde: true)
+
+    elsif session[:veto]
       @pharmacies = Pharmacie.where(veto: true)
 
     elsif params[:de_garde]
       @pharmacie_de_garde = Pharmacie.find_by(de_garde: true)
       # Masquer la barre de recherche dans la vue
       # @hide_search = true
+
 
     else
       @pharmacies = Pharmacie.where(veto: false)

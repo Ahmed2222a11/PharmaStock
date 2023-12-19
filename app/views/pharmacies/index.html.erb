@@ -36,7 +36,11 @@
           <%= link_to "", bookings_path, class:"btn-mes-reservations" %>
         </div>
         <div class="<%= session[:veto] ? "div-btn-garde div-btn-garde-veto items-index" : "div-btn-garde div-btn-garde-human items-index" %>">
-          <%= link_to "SOS", pharmacies_path(de_garde: true), class: "btn-garde" %>
+          <% if @veto == true %>
+          <%= link_to "SOS", pharmacies_path(de_garde: true, veto:false), class: "btn-garde" %>
+          <% else %>
+          <%= link_to "SOS", pharmacies_path(de_garde: true, veto:true), class: "btn-garde" %>
+          <% end %>
         </div>
       </div>
     </div>
