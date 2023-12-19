@@ -72,7 +72,7 @@ puts "creation veterinaires"
 veto_5 = Pharmacie.create!(nom: "Clinique vétérinaire Gambetta", adresse: "85 Bd Gambetta, 06000 Nice", telephone: "0493971080", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
 veto_6 = Pharmacie.create!(nom: "Clinique vétérinaire Berlioz", adresse: "17 Rue Berlioz, 06000 Nice", telephone: "0493873942", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
 veto_7 = Pharmacie.create!(nom: "Clinique vétérinaire Argos", adresse: "16 Rue Lamartine, 06000 Nice", telephone: "0493859727", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
-veto_8 = Pharmacie.create!(nom: "Clinique vétérinaire de Cimiez", adresse: "4 Bd de Cimiez, 06000 Nice", telephone: "0493850158", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
+veto_8 = Pharmacie.create!(nom: "Clinique vétérinaire de Cimiez", adresse: "4 Bd de Cimiez, 06000 Nice", telephone: "0493850158", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true, de_garde: true)
 veto_9 = Pharmacie.create!(nom: " Clinique vétérinaire Carlone", adresse: "10 Bd Carlone, 06200 Nice", telephone: "0493442121", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
 veto_10 = Pharmacie.create!(nom: "Clinique vétérinaire NiceVet ", adresse: "16 bis Rue Penchienatti, 06000 Nice", telephone: "0493854376", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)
 veto_11 = Pharmacie.create!(nom: "Clinique vétérinaire Univet Nice Gorbella", adresse: "11 Bd Gorbella, 06100 Nice", telephone: "0493848793", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h", veto:true)

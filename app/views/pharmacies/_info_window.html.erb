@@ -7,7 +7,6 @@
   </div>
 <% elsif params[:nom_de_medicament].present? && @pharmacies.present? %>
   <div class="<%= session[:veto] ? "row div-result-search-pharmacies div-result-search-pharmacies-veto mx-auto" : "row div-result-search-pharmacies div-result-search-pharmacies-human mx-auto" %>">
-    <% @pharmacies.each do |pharmacie| %>
       <% if @medicament1 != "" && @quantite1 != "" %>
         <p class="link-nom-pharmacies"><%= link_to pharmacie.nom , pharmacy_path(id:pharmacie.id, quantite:@quantite, medicament_id:@medicament, medicament1: @medicament_1, qty1: @quantite_1), class: "nom-pharmacies"%></p>
       <% else %>
