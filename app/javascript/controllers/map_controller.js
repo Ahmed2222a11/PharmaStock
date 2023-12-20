@@ -38,8 +38,8 @@ export default class extends Controller {
 
     this.markerOnClick()
     this.focusGeoloc()
+    console.log('ok');
   }
-
 
   #addMarkersToMap() {
 

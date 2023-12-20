@@ -2,7 +2,6 @@
   <div class="d-flex div-title-phone justify-content-center">
     <h1 class="title-pharma">Pharma</h1><h1 class="title-stock">Stock</h1>
   </div>
-  <div class="<%= session[:veto] ? "big-box-show-reservation big-box-show-reservation-veto" : "big-box-show-reservation big-box-show-reservation-human" %>">
     <div class="<%= session[:veto] ? "div-show-reservations div-show-reservations-veto" : "div-show-reservations div-show-reservations-human" %>">
       <div class="div-btn-home-page d-flex justify-content-between">
         <%= link_to pharmacies_path(veto: session[:veto]), class: session[:veto] ? "btn-home-page btn-home-page-veto" : "btn-home-page btn-home-page-human" do %>
@@ -27,5 +26,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
