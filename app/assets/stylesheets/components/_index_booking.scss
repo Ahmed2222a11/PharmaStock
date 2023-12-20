@@ -101,16 +101,20 @@
 
 .link-reservation-search-human {
   background-color: #f7fff9;
-  border: 2px solid #0da700;
+  border-right: 1px solid #0da700;
+  border-bottom: 1px solid #0da700;
 }
 
 .link-reservation-search-veto {
   background-color: #f7f9ff;
-  border: 2px solid #004b91;
+  border-right: 1px solid #004b91;
+  border-bottom: 1px solid #004b91;
 }
 
 .link-reservation-search:active {
   box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-right: none;
+  border-bottom: none;
 }
 
 .div-link-reservation {

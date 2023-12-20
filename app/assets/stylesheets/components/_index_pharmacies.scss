@@ -26,12 +26,14 @@
 
 .btn-home-page-human i {
   color: #22B14C;
-  border: #22B14C 1px solid;
+  border-right: #22B14C 1px solid;
+  border-bottom: #22B14C 1px solid;
 }
 
 .btn-home-page-veto i {
   color: #004b91;
-  border: #004b91 1px solid;
+  border-right: #004b91 1px solid;
+  border-bottom: #004b91 1px solid;
 }
 
 .big-box-index-pharmacies {
@@ -46,7 +48,7 @@
 }
 
 .div-btn-mes-reservations:active,
-.div-btn-garde:active,
+.btn-garde:active,
 .div-btn-geoloc:active,
 .div-btn-refresh-index:active,
 .btn-home-page i:active,
@@ -54,12 +56,14 @@
 .input-quantite-search-bar-plus:focus,
 .select2-selection--single:focus {
   box-shadow: rgb(110, 120, 111) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important;
+  border-right: none;
+  border-bottom: none;
 }
 
 .div-btn-mes-reservations,
 .div-btn-refresh-index,
 .div-btn-geoloc,
-.div-btn-garde,
+.btn-garde,
 .input-quantite-search-bar,
 .input-quantite-search-bar-plus,
 .btn-search-bar,
@@ -172,8 +176,7 @@
 }
 
 .btn-geoloc {
-  background-image: url("cursor_map.png");
-  background-color: white;
+  background-color: transparent;
   border: 0;
 }
 
@@ -187,25 +190,42 @@
 
 .div-btn-refresh-index-veto a {
   background-image: url("logo-refresh-veto.png");
+  width: 25px;
+  height: 25px;
 }
 
 .div-btn-refresh-index-human a {
   background-image: url("logo-refresh-human.png");
+  width: 25px;
+  height: 25px;
 }
 
 .btn-mes-reservations {
   background-image: url("https://fiches-pratiques.e-marketing.fr/Assets/Img/FICHEPRATIQUE/2021/10/365359/Comment-generer-facilement-code--F.jpg");
 }
 
-.div-btn-garde a,
+.btn-garde-human {
+  background-image: url("pharma-garde2.png");
+  transform: scale(2);
+  background-color: white;
+  border-radius: 50%;
+  border-right: #22B14C 1px solid;
+  border-bottom: #22B14C 1px solid;
+}
+
+.btn-garde-veto {
+  background-image: url("pharma-garde-veto.png");
+  transform: scale(2);
+  background-color: white;
+  border-radius: 50%;
+  border-right: 1px solid #004b91db;
+  border-bottom: 1px solid #004b91db;
+}
+
 .div-btn-geoloc a {
   text-decoration: none;
   font-size: 16px;
   font-weight: 900;
-}
-
-.div-btn-garde a {
-  padding: 7px 3px 0 0;
 }
 
 .div-btn-mes-reservations {
@@ -213,7 +233,7 @@
 }
 
 .div-btn-garde {
-  margin: 0 10px 0 0;
+  margin: 0 15px 0 0;
 }
 
 .div-btn-geoloc {
@@ -221,7 +241,7 @@
 }
 
 .div-btn-refresh-index {
-  margin: 0 20px 10px;
+  margin: 0 25px 10px;
 }
 
 .div-btn-mes-reservations,
@@ -235,17 +255,17 @@
 }
 
 .div-btn-geoloc-veto,
-.div-btn-garde-veto,
 .div-btn-refresh-index-veto,
 .div-btn-mes-reservations-veto {
-  border: #004b91 1px solid;
+  border-right: 1px solid #004b91db;
+  border-bottom: 1px solid #004b91db;
 }
 
 .div-btn-geoloc-human,
-.div-btn-garde-human,
 .div-btn-refresh-index-human,
 .div-btn-mes-reservations-human {
-  border: #22B14C 1px solid;
+  border-right: 1px #22B14C solid;
+  border-bottom: 1px #22B14C solid;
 }
 
 .div-search-bar-btn-reservation {
