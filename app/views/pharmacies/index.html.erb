@@ -44,9 +44,9 @@
           <div class="d-flex">
             <div class="<%= session[:veto] ? "div-btn-garde div-btn-garde-veto items-index" : "div-btn-garde div-btn-garde-human items-index" %>">
               <% if @veto == true %>
-                <%= link_to "SOS", pharmacies_path(de_garde: true, veto:false), class: session[:veto] ? "btn-garde btn-garde-veto" : "btn-garde btn-garde-human" %>
+                <%= link_to "", pharmacies_path(de_garde: true, veto:false), class: session[:veto] ? "btn-garde btn-garde-veto" : "btn-garde btn-garde-human" %>
               <% else %>
-                <%= link_to "SOS", pharmacies_path(de_garde: true, veto:true), class: session[:veto] ? "btn-garde btn-garde-veto" : "btn-garde btn-garde-human" %>
+                <%= link_to "", pharmacies_path(de_garde: true, veto:true), class: session[:veto] ? "btn-garde btn-garde-veto" : "btn-garde btn-garde-human" %>
               <% end %>
             </div>
             <div class="<%= session[:veto] ? "div-btn-geoloc div-btn-geoloc-veto items-index" : "div-btn-geoloc div-btn-geoloc-human items-index" %>">
