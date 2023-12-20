@@ -62,6 +62,10 @@ stock_11 = Stock.create!(quantite: 7, pharmacie_id: pharma_4.id, medicament_id: 
 stock_12 = Stock.create!(quantite: 5, pharmacie_id: pharma_5.id, medicament_id: medicament_12.id)
 stock_13 = Stock.create!(quantite: 8, pharmacie_id: pharma_6.id, medicament_id: medicament_9.id)
 stock_14 = Stock.create!(quantite: 3, pharmacie_id: pharma_7.id, medicament_id: medicament_7.id)
+stock_15 = Stock.create!(quantite: 8, pharmacie_id: pharma_5.id, medicament_id: medicament_8.id)
+stock_16 = Stock.create!(quantite: 3, pharmacie_id: pharma_6.id, medicament_id: medicament_10.id)
+stock_17 = Stock.create!(quantite: 9, pharmacie_id: pharma_7.id, medicament_id: medicament_6.id)
+stock_18 = Stock.create!(quantite: 4, pharmacie_id: pharma_1.id, medicament_id: medicament_5.id)
 
 
 
@@ -112,4 +116,10 @@ stock_25 = Stock.create!(quantite: 9, medicament_id: medicament_17.id, pharmacie
 stock_26 = Stock.create!(quantite: 4, medicament_id: medicament_18.id, pharmacie_id: veto_9.id)
 stock_27 = Stock.create!(quantite: 6, medicament_id: medicament_19.id, pharmacie_id: veto_10.id)
 stock_28 = Stock.create!(quantite: 2, medicament_id: medicament_20.id, pharmacie_id: veto_11.id)
+stock_29 = Stock.create!(quantite: 7, medicament_id: medicament_21.id, pharmacie_id: veto_5.id)
+stock_30 = Stock.create!(quantite: 5, medicament_id: medicament_22.id, pharmacie_id: veto_6.id)
+stock_31 = Stock.create!(quantite: 8, medicament_id: medicament_23.id, pharmacie_id: veto_7.id)
+stock_32 = Stock.create!(quantite: 3, medicament_id: medicament_24.id, pharmacie_id: veto_8.id)
+stock_33 = Stock.create!(quantite: 9, medicament_id: medicament_13.id, pharmacie_id: veto_9.id)
+
 puts "stocks created"
