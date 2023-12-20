@@ -81,18 +81,18 @@ puts "veterinaires created"
 
 
 puts "creation medicaments veterinaires"
-medicament_13 = Medicament.create!(nom: "Fortekor")
-medicament_14 = Medicament.create!(nom: "Emeprid")
-medicament_15 = Medicament.create!(nom: "Semintra")
-medicament_16 = Medicament.create!(nom: "Pangram")
-medicament_17 = Medicament.create!(nom: "Vetmedin")
-medicament_18 = Medicament.create!(nom: "Vetoryl")
-medicament_19 = Medicament.create!(nom: "Cortavance")
-medicament_20 = Medicament.create!(nom: "Cortisyl")
-medicament_21 = Medicament.create!(nom: "Frontline")
-medicament_22 = Medicament.create!(nom: "Advantix")
-medicament_23 = Medicament.create!(nom: "Milbemax")
-medicament_24 = Medicament.create!(nom: "Drontal")
+medicament_13 = Medicament.create!(nom: "Fortekor", medoc_veto: true)
+medicament_14 = Medicament.create!(nom: "Emeprid", medoc_veto: true)
+medicament_15 = Medicament.create!(nom: "Semintra", medoc_veto: true)
+medicament_16 = Medicament.create!(nom: "Pangram", medoc_veto: true)
+medicament_17 = Medicament.create!(nom: "Vetmedin", medoc_veto: true)
+medicament_18 = Medicament.create!(nom: "Vetoryl", medoc_veto: true)
+medicament_19 = Medicament.create!(nom: "Cortavance", medoc_veto: true)
+medicament_20 = Medicament.create!(nom: "Cortisyl", medoc_veto: true)
+medicament_21 = Medicament.create!(nom: "Frontline", medoc_veto: true)
+medicament_22 = Medicament.create!(nom: "Advantix", medoc_veto: true)
+medicament_23 = Medicament.create!(nom: "Milbemax", medoc_veto: true)
+medicament_24 = Medicament.create!(nom: "Drontal", medoc_veto: true)
 
 puts "medicaments created"
 

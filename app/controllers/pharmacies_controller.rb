@@ -28,6 +28,13 @@ before_action :set_pharmacie, only: [:show]
       @medicament_1 = ""
       @quantite_1 = ""
     end
+
+    if session[:veto]
+      @medicaments = Medicament.where(medoc_veto: true)
+    else
+      @medicaments = Medicament.where(medoc_veto: false)
+    end
+
     if !params[:nom_de_medicament].nil? && !params[:quantite].nil? && params[:nom_de_medicament_1] != "" && params[:quantite_1] != ""
       @medicament = Medicament.find_by(nom: params[:nom_de_medicament])
       @medicament_1 = Medicament.find_by(nom: params[:nom_de_medicament_1])
