@@ -138,7 +138,6 @@
   border-right: 2px solid #0da700;
   border-bottom: 2px solid #0da700;
   border-radius: 50%;
-  overflow: hidden;
   box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
   transform: translatey(0px);
   animation: float 6s ease-in-out infinite;
@@ -158,8 +157,6 @@
     transform: translatey(0px);
   }
 }
-
-
 
 
 
@@ -463,9 +460,9 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #fff;
+  background: #ffffff;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   font-size: 100%;
   text-align: center;
 }
@@ -552,7 +549,7 @@ body {
   width: 30px;
   line-height: 30px;
   opacity: 0;
-  overflow: hidden;
+  // overflow: hidden;
 }
 .text::after {
   z-index: -1;
