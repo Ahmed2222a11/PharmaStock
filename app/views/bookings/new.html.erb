@@ -15,7 +15,7 @@
     <h4>Votre panier :</h4>
     <%= form_with model: @booking, url:bookings_path, method: :post  do |t| %>
       <%= t.hidden_field :pharmacie_id, value: @pharmacie.id %>
-      <div class="<%= session[:veto] ? "div-medicaments-panier div-medicaments-panier-veto d-flex justify-content-between" : "div-medicaments-panier div-medicaments-panier-human d-flex justify-content-between" %>" id='stock' data-stock="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed.medicament.id).quantite %>">
+      <div class="d-flex justify-content-between <%= session[:veto] ? "div-medicaments-panier div-medicaments-panier-veto" : "div-medicaments-panier div-medicaments-panier-human" %>" id='stock' data-stock="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed.medicament.id).quantite %>">
         <%= t.hidden_field :medicament, value: @bookmed.medicament.nom %>
         <h5><%= @bookmed.medicament.nom %></h5>
         <div class="d-flex div-plus-moins">
@@ -25,7 +25,7 @@
         </div>
       </div>
       <% if @bookmed2 %>
-        <div class="<%= session[:veto] ? "div-medicaments-panier div-medicaments-panier-veto d-flex justify-content-between" : "div-medicaments-panier div-medicaments-panier-human d-flex justify-content-between" %>" id='stock2' data-stock2="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed2.medicament.id).quantite %>">
+        <div class="d-flex justify-content-between <%= session[:veto] ? "div-medicaments-panier div-medicaments-panier-veto" : "div-medicaments-panier div-medicaments-panier-human" %>" id='stock2' data-stock2="<%= @pharmacie.stocks.find_by_medicament_id(@bookmed2.medicament.id).quantite %>">
           <%= t.hidden_field :medicament2, value: @bookmed2.medicament.nom %>
           <h5><%= @bookmed2.medicament.nom %></h5>
           <div class="d-flex div-plus-moins">
