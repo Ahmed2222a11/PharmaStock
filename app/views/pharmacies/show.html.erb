@@ -51,31 +51,33 @@
         <%= link_to "Ajouter au panier", new_booking_path(pharmacie_id:@pharmacie.id, quantite: @quantite, medicament: @medicament, medicament1: @medicament1, qty1: @quantite1), class:  session[:veto] ? "btn-panier-show-pharmacie btn-panier-show-pharmacie-veto d-flex flex-column" : "btn-panier-show-pharmacie btn-panier-show-pharmacie-human d-flex flex-column" %>
       </div>
     <% end %>
-    <div class="<%= session[:veto] ? "div-infos-pharmacies div-infos-pharmacies-veto d-flex flex-column" : "div-infos-pharmacies div-infos-pharmacies-human d-flex flex-column" %>">
-      <h3><%= @pharmacie.nom %> </h3>
-      <div class="infos-pharmacies">
-        <div class="d-flex">
-          <i class="fa-solid fa-phone"></i>
-          <p><%= @pharmacie.telephone %> </p>
-        </div>
-        <div class="d-flex">
-          <i class="fa-solid fa-house"></i>
-          <p><%= @pharmacie.adresse %> </p>
-        </div>
-        <div class="d-flex horaires" data-controller="hidden-text">
-          <i class="fa-solid fa-clock"></i>
-          <div class="d-flex flex-column justify-content-start ">
-            <div class="d-flex">
-              <p class="horaires-show">Horaires </p>
-              <span data-action="click->hidden-text#toggleText">
-                <img src="https://cdn.icon-icons.com/icons2/2645/PNG/512/chevron_down_icon_160252.png" alt=""></span>
-            </div>
-            <div class="tableau-horaires hidden" data-hidden-text-target="display">
-              <% if @pharmacie.horaires.present?  %>
-                <p class="horaires-show"><%= @pharmacie.horaires %></p>
-              <% else %>
-                <p>Cette Pharmacie n'as pas communiqué ses horaires.</p>
-              <% end  %>
+    <div class="d-flex justify-content-center">
+      <div class="<%= session[:veto] ? "div-infos-pharmacies div-infos-pharmacies-veto d-flex flex-column" : "div-infos-pharmacies div-infos-pharmacies-human d-flex flex-column" %>">
+        <h3><%= @pharmacie.nom %> </h3>
+        <div class="infos-pharmacies">
+          <div class="d-flex">
+            <i class="fa-solid fa-phone"></i>
+            <p><%= @pharmacie.telephone %> </p>
+          </div>
+          <div class="d-flex">
+            <i class="fa-solid fa-house"></i>
+            <p><%= @pharmacie.adresse %> </p>
+          </div>
+          <div class="d-flex horaires" data-controller="hidden-text">
+            <i class="fa-solid fa-clock"></i>
+            <div class="d-flex flex-column justify-content-start ">
+              <div class="d-flex">
+                <p class="horaires-show">Horaires </p>
+                <span data-action="click->hidden-text#toggleText">
+                  <img src="https://cdn.icon-icons.com/icons2/2645/PNG/512/chevron_down_icon_160252.png" alt=""></span>
+              </div>
+              <div class="tableau-horaires hidden" data-hidden-text-target="display">
+                <% if @pharmacie.horaires.present?  %>
+                  <p class="horaires-show"><%= @pharmacie.horaires %></p>
+                <% else %>
+                  <p>Cette Pharmacie n'as pas communiqué ses horaires.</p>
+                <% end  %>
+              </div>
             </div>
           </div>
         </div>
