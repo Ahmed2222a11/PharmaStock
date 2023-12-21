@@ -8,16 +8,22 @@
   // border: 1px grey solid;
 }
 
+.div-home-page {
+  height: calc(100vh - 116.05px);
+}
+
 .title-pharma {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
   color: #22B14C;
   font-weight: bold;
+  margin-top: -2px;
 }
 
 .title-stock {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
   color: #004b91;
   font-weight: bold;
+  margin-top: 13px;
 }
 
 .div-title-phone {
@@ -29,7 +35,7 @@
 .big-box-btn-home {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: calc(100vh - 116.05px);
   background: linear-gradient(to bottom right, #22B14C 0%, #EBFFF1 50%, #c9e5ff 50%, #004b91 100%);
 }
 
@@ -93,7 +99,7 @@
 }
 
 .logo-pharma {
-  width: 53vw;
+  width: 49vw;
   height: 24vh;
   opacity: 0.8;
   margin: 10px 100px 0px 10px;

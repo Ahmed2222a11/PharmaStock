@@ -1,8 +1,13 @@
 <div class="div-phone">
-  <div class="d-flex div-title-phone justify-content-center">
-    <h1 class="title-pharma">Pharma</h1>
-    <h1 class="title-stock">Stock</h1>
-    <%= link_to "Profile", profile_path(veto: session[:veto])%>
+  <div class="d-flex justify-content-between big-box-title-index">
+  <div class="clear-space"></div>
+  <div class="d-flex justify-content-center div-title-phone-index">
+    <h1 class="title-pharma-index">Pharma</h1>
+    <h1 class="title-stock-index">Stock</h1>
+  </div>
+  <div class=" d-flex justify-content-end <% session[:veto] ? "div-btn-profile div-btn-profile-veto" : "div-btn-profile div-btn-profile-human"%>">
+    <%= link_to "", profile_path(veto: session[:veto]), class: session[:veto] ? "btn-profile btn-profile-veto" : "btn-profile btn-profile-human" %>
+  </div>
 
   </div>
   <div id="map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-session-value="<%= session[:veto] %>"

@@ -4,10 +4,13 @@
     <h1 class="title-stock">Stock</h1>
   </div>
   <div class="<%= session[:veto] ? "div-show-panier div-show-panier-veto" : "div-show-panier div-show-panier-human" %>" >
-    <div class="div-btn-back-index-pharma-page d-flex justify-content-end">
-      <%= link_to :back, class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
-        <i class="fa-solid fa-circle-arrow-left"></i>
-      <% end %>
+    <div class="div-btn-home-page d-flex justify-content-start">
+      <div class="space-div-btn-home-page"></div>
+      <div class="div-btn-back-index-pharma-page d-flex justify-content-start">
+        <%= link_to :back, class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
+          <i class="fa-solid fa-circle-arrow-left"></i>
+        <% end %>
+      </div>
     </div>
     <h4>Votre panier :</h4>
     <%= form_with model: @booking, url:bookings_path, method: :post  do |t| %>
