@@ -11,12 +11,30 @@
     </div>
     <h4>Vos coordonnées :</h4>
     <div class="d-flex flex-column justify-content-center <%= session[:veto] ? "div-each-reservation div-each-reservation-veto" : "div-each-reservation div-each-reservation-human" %>">
-      <p class="coordonnees-profil"> <%= "Prénom : #{@user.first_name}" %></p>
-      <p class="coordonnees-profil"> <%= "Nom : #{@user.last_name}"%></p>
-      <p class="coordonnees-profil"> <%= "Tel : #{@user.telephone}" %></p>
-      <p class="coordonnees-profil"> <%= "Adresse : #{@user.adresse}" %></p>
-      <p class="coordonnees-profil"> <%= "Email : #{@user.email}" %></p>
-      <p class="coordonnees-profil"> <%= "N° sécurité sociale : #{@user.nir}" %></p>
+      <div class="d-flex justify-content-center">
+        <p class="coordonnees-profil"><strong>Prénom : &nbsp;</strong></p>
+        <p class="coordonnees-profil"> <%= "#{@user.first_name}" %></p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p class="coordonnees-profil"><strong>Nom : &nbsp;</strong></p>
+        <p class="coordonnees-profil"> <%= "#{@user.last_name}"%></p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p class="coordonnees-profil"><strong>Tel : &nbsp;</strong></p>
+        <p class="coordonnees-profil"> <%= "#{@user.telephone}" %></p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p class="coordonnees-profil"><strong>Adresse : &nbsp;</strong></p>
+        <p class="coordonnees-profil"> <%= "#{@user.adresse}" %></p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p class="coordonnees-profil"><strong>Email : &nbsp;</strong></p>
+        <p class="coordonnees-profil"> <%= "#{@user.email}" %></p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <p class="coordonnees-profil"><strong>N° séc sociale : &nbsp;</strong></p>
+        <p class="coordonnees-profil"> <%= "#{@user.nir}" %></p>
+      </div>
     </div>
   </div>
 </div>
