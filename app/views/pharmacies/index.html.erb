@@ -2,6 +2,8 @@
   <div class="d-flex div-title-phone justify-content-center">
     <h1 class="title-pharma">Pharma</h1>
     <h1 class="title-stock">Stock</h1>
+    <%= link_to "Profile", profile_path(veto: session[:veto]), class: session[:veto] ? "btn-garde btn-garde-veto" : "btn-garde btn-garde-human" %>
+
   </div>
   <div id="map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-session-value="<%= session[:veto] %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="map">

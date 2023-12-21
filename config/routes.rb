@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   get 'show_pharma_marker/:id', to: 'show_pharma_marker#show', as: 'show_pharma_marker'
+  get 'profile', to: 'pages#profile', as: 'profile'
 
   # Defines the root path route ("/")
   # root "posts#index"
