@@ -14,8 +14,18 @@
   border-bottom: 1px grey solid;
 }
 
-.div-QR-code svg {
-  transform: scale(0.7);
+.QR-double {
+  transform-origin: top;
+  max-height: 36vh;
+  transform: scale(0.5);
+  margin-top: 4vh;
+}
+
+.QR-simple {
+  transform-origin: top;
+  max-height: 36vh;
+  transform: scale(0.65);
+  margin-top: 4vh;
 }
 
 .big-box-show-reservation {
@@ -33,7 +43,7 @@
 
 .div-show-reservations {
   padding: 20px;
-  height: 100vh;
+  min-height: calc(100vh - 116.05px);
 }
 
 .div-show-reservations-human {

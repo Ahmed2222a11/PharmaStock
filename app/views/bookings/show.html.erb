@@ -16,11 +16,12 @@
     <div class="<%= session[:veto] ? "div-each-reservation div-each-reservation-veto" : "div-each-reservation div-each-reservation-human" %>">
       <p> <%= "#{@booking.pharmacie.nom}" %></p>
       <p><%= "Réservation n°#{@booking.id}" %></p>
+      <p class="text-reservation-medoc"><%= "Effectuée le #{@booking.created_at.strftime("%d/%m/%Y")}"%></p>
       <% @booking_medicaments.each do |booking_medicament| %>
         <p class="text-reservation-medoc"><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></strong></p>
       <% end %>
       <div class="d-flex justify-content-center">
-        <div class="div-QR-code">
+        <div class="div-QR-code <%= @booking_medicaments.count > 1 ? "QR-double" : "QR-simple"%>">
           <%= @qrcode.as_svg.html_safe if @qrcode.present? %>
         </div>
       </div>
