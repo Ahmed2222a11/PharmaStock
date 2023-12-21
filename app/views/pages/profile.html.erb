@@ -1,24 +1,22 @@
-
 <div class="div-phone">
   <div class="d-flex div-title-phone justify-content-center">
     <h1 class="title-pharma">Pharma</h1>
     <h1 class="title-stock">Stock</h1>
-    </div>
-    <div class="">
-       <div class="div-btn-back-index-reservation-page d-flex justify-content-end">
+  </div>
+  <div class="<%= session[:veto] ? "div-show-reservations div-show-reservations-veto" : "div-show-reservations div-show-reservations-human" %>">
+    <div class="div-btn-back-index-reservation-page d-flex justify-content-end">
       <%= link_to pharmacies_path(veto: session[:veto]), class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
         <i class="fa-solid fa-circle-arrow-left"></i>
       <% end %>
     </div>
-      <h3>Vos données:</h3>
-      <br>
-      <p> <%= "Votre prenom #{@user.first_name}" %></p><br>
-      <p> <%= "Votre nom: #{@user.last_name}"%></p>
-      <br>
-      <p> <%= "Votre numéro de telephone: #{@user.telephone}" %></p>
-      <p> <%= "Votre adresse:#{@user.adresse}" %></p>
-      <p> <%= "Votre email:#{@user.email}" %></p>
-      <p> <%= "Votre numéro social:#{@user.nir}" %></p>
+    <h4>Vos coordonnées :</h4>
+    <div class="d-flex flex-column justify-content-center <%= session[:veto] ? "div-each-reservation div-each-reservation-veto" : "div-each-reservation div-each-reservation-human" %>">
+      <p class="coordonnees-profil"> <%= "Prénom : #{@user.first_name}" %></p>
+      <p class="coordonnees-profil"> <%= "Nom : #{@user.last_name}"%></p>
+      <p class="coordonnees-profil"> <%= "Tel : #{@user.telephone}" %></p>
+      <p class="coordonnees-profil"> <%= "Adresse : #{@user.adresse}" %></p>
+      <p class="coordonnees-profil"> <%= "Email : #{@user.email}" %></p>
+      <p class="coordonnees-profil"> <%= "N° sécurité sociale : #{@user.nir}" %></p>
     </div>
+  </div>
 </div>
-
