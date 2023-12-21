@@ -4,6 +4,6 @@ meta_title : « PharmaStock – Pour le stock pharma et veto »
 
 meta_description : « Description pertinente »
 
-meta_image : "logo-pharma2.png" # devrait exister dans `app/assets/images/`
+meta_image : "panier-pharma.png" # devrait exister dans `app/assets/images/`
 
 twitter_account : « @product_twitter_account » # requis pour les cartes Twitter
