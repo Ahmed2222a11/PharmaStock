@@ -8,9 +8,8 @@
   // border: 1px grey solid;
 }
 
-.div-title-phone {
+.div-title-phone-index {
   background-color: white;
-  padding-top: 40px;
   border-bottom: 1px grey solid;
 }
 
@@ -49,6 +48,7 @@
 
 .div-btn-mes-reservations:active,
 .btn-garde:active,
+.btn-profile:active,
 .div-btn-geoloc:active,
 .div-btn-refresh-index:active,
 .btn-home-page i:active,
@@ -68,6 +68,7 @@
 .input-quantite-search-bar-plus,
 .btn-search-bar,
 .btn_plus,
+.btn-profile,
 .btn-home-page i {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
@@ -168,7 +169,8 @@
 .btn-mes-reservations,
 .btn-garde,
 .btn-geoloc,
-.btn-refresh-index {
+.btn-refresh-index,
+.btn-profile {
   background-size: cover;
   width: 35px;
   height: 35px;
@@ -204,20 +206,39 @@
   background-image: url("https://fiches-pratiques.e-marketing.fr/Assets/Img/FICHEPRATIQUE/2021/10/365359/Comment-generer-facilement-code--F.jpg");
 }
 
-.btn-garde-human {
-  background-image: url("pharma-garde2.png");
+.btn-profile {
+  background-color: white;
+  background-image: url("avatar-profil.jpg");
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin: 15px 15px 0 0;
+}
+
+.btn-profile-human {
+  border-right: #22B14C 1px solid;
+  border-bottom: #22B14C 1px solid;
+}
+
+.btn-profile-veto {
+  border-right: 1px solid #004b91db;
+  border-bottom: 1px solid #004b91db;
+}
+
+.btn-garde {
   transform: scale(2);
   background-color: white;
   border-radius: 50%;
+}
+
+.btn-garde-human {
+  background-image: url("pharma-garde2.png");
   border-right: #22B14C 1px solid;
   border-bottom: #22B14C 1px solid;
 }
 
 .btn-garde-veto {
   background-image: url("pharma-garde-veto.png");
-  transform: scale(2);
-  background-color: white;
-  border-radius: 50%;
   border-right: 1px solid #004b91db;
   border-bottom: 1px solid #004b91db;
 }
@@ -247,6 +268,7 @@
 .div-btn-mes-reservations,
 .div-btn-garde,
 .div-btn-geoloc,
+.div-btn-profile,
 .div-btn-refresh-index {
   height: fit-content;
   background-color: white;
@@ -255,6 +277,7 @@
 }
 
 .div-btn-geoloc-veto,
+.div-btn-profile-veto,
 .div-btn-refresh-index-veto,
 .div-btn-mes-reservations-veto {
   border-right: 1px solid #004b91db;
@@ -262,6 +285,7 @@
 }
 
 .div-btn-geoloc-human,
+.div-btn-profile-human,
 .div-btn-refresh-index-human,
 .div-btn-mes-reservations-human {
   border-right: 1px #22B14C solid;
@@ -269,7 +293,7 @@
 }
 
 .div-search-bar-btn-reservation {
-  height: 100vh;
+  height: 80vh;
 }
 
 .text-garde {
