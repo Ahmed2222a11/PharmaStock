@@ -23,6 +23,7 @@
             <%= link_to "", booking_path(booking), class: "link-reservation" %>
             <%= link_to "info", booking_path(booking), class: session[:veto] ? "link-reservation-search link-reservation-search-veto" : "link-reservation-search link-reservation-search-human" %>
           </div>
+          <p> <%= "#{booking.pharmacie.nom}" %></p>
           <p class="text-reservation"><%= "Réservation n°#{booking.id}" %></p>
           <% booking.booking_medicaments.each do |booking_medicament| %>
             <p class="text-reservation"><%= booking_medicament.medicament.nom %> - Quantité : <strong><%= booking_medicament.quantite %></p>
