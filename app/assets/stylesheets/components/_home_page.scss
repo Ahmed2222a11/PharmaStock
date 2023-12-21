@@ -22,34 +22,19 @@
 
 .div-title-phone {
   background-color: white;
-  padding-top: 65px;
+  padding-top: 40px;
   border-bottom: 1px grey solid;
 }
 
 .big-box-btn-home {
   margin: 0;
   padding: 0;
-  height: 80vh;
+  height: 100vh;
   background: linear-gradient(to bottom right, #22B14C 0%, #EBFFF1 50%, #c9e5ff 50%, #004b91 100%);
 }
 
 .div-btn-home-pharma-veto {
   justify-content: space-around;
-}
-
-.div-home-page {
-  background-color: #9a9a9a;
-  left: 0;
-  z-index: -1;
-  bottom: 0;
-  width: 100%;
-  height: 10px;
-  transition: 1s ease;
-}
-
-.div-home-page:hover {
-  height: 100vh;
-  transition: 1s ease;
 }
 
 .div-btn-home-pharmacies {
