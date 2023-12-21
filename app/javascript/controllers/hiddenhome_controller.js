@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="hiddenhome"
 export default class extends Controller {
   connect() {
-    console.log("Hello, hiddenhome!");
+    console.log("Hello, hidden_home!");
     this.titleHome()
   }
 
