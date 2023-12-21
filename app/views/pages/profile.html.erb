@@ -1,13 +1,24 @@
-<div class="div-btn-back-index-reservation-page d-flex justify-content-end">
+
+<div class="div-phone">
+  <div class="d-flex div-title-phone justify-content-center">
+    <h1 class="title-pharma">Pharma</h1>
+    <h1 class="title-stock">Stock</h1>
+    </div>
+    <div class="">
+       <div class="div-btn-back-index-reservation-page d-flex justify-content-end">
       <%= link_to pharmacies_path(veto: session[:veto]), class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
         <i class="fa-solid fa-circle-arrow-left"></i>
       <% end %>
     </div>
+      <h3>Vos données:</h3>
+      <br>
+      <p> <%= "Votre prenom #{@user.first_name}" %></p><br>
+      <p> <%= "Votre nom: #{@user.last_name}"%></p>
+      <br>
+      <p> <%= "Votre numéro de telephone: #{@user.telephone}" %></p>
+      <p> <%= "Votre adresse:#{@user.adresse}" %></p>
+      <p> <%= "Votre email:#{@user.email}" %></p>
+      <p> <%= "Votre numéro social:#{@user.nir}" %></p>
+    </div>
+</div>
 
-
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.telephone %>
-<%= @user.adresse %>
-<%= @user.email %>
-<%= @user.nir %>
