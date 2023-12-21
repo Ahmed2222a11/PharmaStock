@@ -4,7 +4,7 @@
     <h1 class="title-stock">Stock</h1>
   </div>
   <div class="<%= session[:veto] ? "div-show-reservations div-show-reservations-veto" : "div-show-reservations div-show-reservations-human" %>">
-    <div class="div-btn-back-index-reservation-page d-flex justify-content-end">
+    <div class="div-btn-back-index-reservation-page d-flex justify-content-start">
       <%= link_to pharmacies_path(veto: session[:veto]), class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
         <i class="fa-solid fa-circle-arrow-left"></i>
       <% end %>

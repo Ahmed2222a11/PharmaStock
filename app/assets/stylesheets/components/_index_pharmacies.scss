@@ -8,9 +8,27 @@
   // border: 1px grey solid;
 }
 
-.div-title-phone-index {
+.big-box-title-index {
   background-color: white;
   border-bottom: 1px grey solid;
+  height: 14vh;
+  padding: 40px 0;
+}
+
+.clear-space {
+  width: 55px;
+}
+
+.title-pharma-index {
+  color: #22B14C;
+  font-weight: bold;
+  margin-top: -2px;
+}
+
+.title-stock-index {
+  color: #004b91;
+  font-weight: bold;
+  margin-top: 13px;
 }
 
 .btn-home-page i {
@@ -212,7 +230,7 @@
   border-radius: 50%;
   width: 45px;
   height: 45px;
-  margin: 15px 15px 0 0;
+  margin: 0 10px 0px 0;
 }
 
 .btn-profile-human {
@@ -293,7 +311,7 @@
 }
 
 .div-search-bar-btn-reservation {
-  height: 100vh;
+  height: 86vh;
 }
 
 .text-garde {
