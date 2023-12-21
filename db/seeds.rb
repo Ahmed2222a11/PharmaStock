@@ -14,11 +14,14 @@
 # puts 'destroying trees'
 # User.destroy_all
 # puts 'destroying users'
-
 Stock.destroy_all
 Pharmacie.destroy_all
 Medicament.destroy_all
+User.destroy_all
 puts "destroying all"
+
+puts "creation users"
+user_1 = User.create!(email: "ghostmarktrick@gmail.com", password: "azerty", first_name: "Hamoud", last_name: "DuJardin", nir: "185057800608436", adresse: "12 Rue d'Italie", telephone: "0612345678")
 
 puts "creation pharmacies"
 pharma_1 = Pharmacie.create!(nom: "Pharmacie Gounod", adresse: "32 Av. Georges Clemenceau, 06000 Nice", telephone: "0493880492", email: "lol@gmail.com", horaires: "9h-12h / 13h-18h")
