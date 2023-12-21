@@ -1,5 +1,8 @@
-<%=link_to "retour", pharmacies_path(veto: session[:veto])%>
-
+<div class="div-btn-back-index-reservation-page d-flex justify-content-end">
+      <%= link_to pharmacies_path(veto: session[:veto]), class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      <% end %>
+    </div>
 
 
 <%= @user.first_name %>
