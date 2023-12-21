@@ -3,10 +3,11 @@
     <h1 class="title-pharma">Pharma</h1><h1 class="title-stock">Stock</h1>
   </div>
     <div class="<%= session[:veto] ? "div-show-reservations div-show-reservations-veto" : "div-show-reservations div-show-reservations-human" %>">
-      <div class="div-btn-home-page d-flex justify-content-between">
+      <div class="div-btn-home-page d-flex justify-content-start">
         <%= link_to pharmacies_path(veto: session[:veto]), class: session[:veto] ? "btn-home-page btn-home-page-veto" : "btn-home-page btn-home-page-human" do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
+        <div class="space-div-btn-home-page"></div>
           <%= link_to bookings_path, class: session[:veto] ? "btn-back-show-reservation btn-back-show-reservation-veto" : "btn-back-show-reservation btn-back-show-reservation-human" do %>
           <i class="fa-solid fa-circle-arrow-left"></i>
         <% end %>

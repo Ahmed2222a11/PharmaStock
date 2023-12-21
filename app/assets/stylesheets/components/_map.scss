@@ -99,7 +99,7 @@
 
 .map {
   z-index: 0;
-  height: 100vh;
+  height: 86vh;
   outline: none !important;
 }
 
@@ -109,4 +109,10 @@
 
 .mapboxgl-user-location-accuracy-circle {
   width: 0 !important;
+}
+
+.mapboxgl-ctrl-logo,
+.mapboxgl-ctrl-attrib-button,
+.mapboxgl-ctrl {
+  display: none !important;
 }
