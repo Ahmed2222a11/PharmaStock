@@ -87,7 +87,8 @@
 .btn-search-bar,
 .btn_plus,
 .btn-profile,
-.btn-home-page i {
+.btn-home-page i,
+.select2-dropdown {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
@@ -123,6 +124,10 @@
   width: 177px !important;
 }
 
+.selection {
+  outline: none !important;
+}
+
 .select2-selection--single {
   display: flex !important;
   font-size: 15px !important;
@@ -145,6 +150,16 @@
   right: 7px !important;
   width: 20px !important;
   transform: scale(1.3) !important;
+}
+
+.select2-search__field {
+  outline: none !important;
+  border-radius: 15px !important;
+}
+
+.select2-dropdown {
+  border: 1px solid rgb(128, 128, 128) !important;
+  border-radius: 15px 15px 5px 5px !important;
 }
 
 .btn_plus {
@@ -176,7 +191,7 @@
 }
 
 .form-search-bar {
-  padding: 6px 0 0 13px;
+  padding: 2px 0 0 13px;
 }
 
 .items-index {
