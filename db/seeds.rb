@@ -126,3 +126,4 @@ stock_32 = Stock.create!(quantite: 3, medicament_id: medicament_24.id, pharmacie
 stock_33 = Stock.create!(quantite: 9, medicament_id: medicament_13.id, pharmacie_id: veto_9.id)
 
 puts "stocks created"
+ # kesta t'as fais RODRIGUE!!!!
